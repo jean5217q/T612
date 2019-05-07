@@ -1,0 +1,58 @@
+//budget type 小圓
+.budget-show-item-type {
+  @include flexy($ais: center,$just: center);
+  background-color: $main;
+  border-radius: 50%;
+  &.transportation {
+    background-color: $trans;
+    .budget-show-item-type-icon {
+      background-image: url('../images/budget_icon/budget_transportation.svg');
+    }
+  }
+  &.shopping {
+    background-color: $spot;
+    .budget-show-item-type-icon {
+      background-image: url('../images/budget_icon/budget_shopping.svg');
+    }
+  }
+  &.entertainment {
+    background-color: $trans-taxi;
+    .budget-show-item-type-icon {
+      background-image: url('../images/budget_icon/budget_entertainment.svg');
+    }
+  }
+  &.food {
+    background-color: $food;
+    .budget-show-item-type-icon {
+      background-image: url('../images/budget_icon/budget_food.svg');
+    }
+  }
+  &.hotel {
+    background-color: $stay;
+    .budget-show-item-type-icon {
+      background-image: url('../images/budget_icon/budget_hotel.svg');
+    }
+  }
+  &.others {
+    background-color: #00bc84;
+    .budget-show-item-type-icon {
+      background-image: url('../images/budget_icon/budget_others.svg');
+    }
+  }
+}
+.budget-show-item-type-icon {
+  @include size(65%,65%);
+}
+
+@media screen and (min-width: 768px) {
+  .budget-show-item-type { 
+    @include size(26px,26px);
+    margin-right: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .budget-show-item-type { 
+    @include size(24px,24px);
+    margin-right: 12px;
+  }
+}

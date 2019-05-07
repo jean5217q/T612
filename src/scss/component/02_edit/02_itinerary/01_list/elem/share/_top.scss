@@ -1,0 +1,225 @@
+//list外層(主層與父層)-share
+.i-item {
+  color: $text;
+  overflow: hidden;
+  width: 100%;
+}
+//上部外層
+.i-item-top {
+  position: relative;
+  
+  @include flexy($ais: center);
+  border-top: 1px solid $border;
+  background-color: $white;
+  transition: 0.2s ease-out;
+  overflow: hidden;
+}
+//上部內容主體
+.i-item-top-inner {
+  @include flexy($ais: center);
+  position: relative;
+}
+.i-item-edit-wrap {
+  @include absolute($t: 0,$r: 0);
+  height: calc(100% + 2px);
+  // border-bottom: 2px solid $border;
+  @include flexy($dir: column,$ais: center,$just: center);
+  &.budget {
+    border-bottom: 1px solid #e0f3ff;
+  }
+}
+.i-item-edit-btn {
+  flex: 1;
+  width: 100%;
+  @include flexy($ais: center,$just: center);
+  cursor: pointer;
+  &.edit {
+    background-color: #1ba071;
+  }
+  &.delete {
+    background-color: #00ba7c;
+  }
+}
+.i-item-edit-icon {
+  transition: 0.2s ease-out;
+  &.edit {
+    background-image: url('../images/essential/edit_white_icon.svg');
+  }
+  &.delete {
+    background-image: url('../images/essential/remove_circle_white_icon.svg');
+  } 
+}
+
+//滑動RWD
+@media screen and(max-width: 767px) {
+  .i-item-top {
+    width: calc(100% + 48px);
+    &.right {
+      transform: translateX(-48px);
+    }
+  }
+  .i-item-top-inner {
+    width: calc(100% - 48px);
+  }
+  .i-item-edit-wrap {
+    width: 48px;
+
+  }
+  .i-item-edit-icon {
+    @include size(12px,12px);
+  }
+}
+@media screen and(min-width: 768px) {
+  .i-item-top {
+    width: calc(100% + 60px);
+    &.right {
+      transform: translateX(-60px);
+    }
+  }
+  .i-item-top-inner {
+    width: calc(100% - 60px);
+  }
+  .i-item-edit-wrap {
+    width: 60px;
+  }
+  .i-item-edit-icon {
+    @include size(16px,16px);
+    &.delete {
+      @include size(18px,18px);
+    }
+  }
+}
+
+//上部比例層
+.i-top-block {
+  &.time, &.type {
+    flex-shrink: 0;
+  }
+  &.main {
+    width: 100%;
+    @include flexy($just: flex-start);
+    word-break: break-all;
+  }
+  &.drop {
+    flex-shrink: 0;
+    margin-left: auto;
+    position: relative;
+    @include flexy($just: center);
+  }
+  &.edit {
+    width: 8px;
+    flex-shrink: 0;
+    margin-left: 16px;
+    @include flexy($just: flex-end);
+    cursor: pointer;
+  }
+}
+.show-item-edit-icon {
+  @include size(6px,20px);
+  background-image: url('../images/essential/edit_dot_gray.svg');
+}
+//時間
+.i-top-block.time {
+  transform: translateY(1px);
+}
+//類型
+.i-top-block.type>.type {
+  @include size(32px,32px);
+  @include flexy($ais: center,$just: center);
+  border-radius: 50%;
+  background: $text;
+  .icon {
+    @include size(68%,68%);
+    background-position: cover cover;
+    background-size: 100%,100%;
+    background-image: url('../images/sub_cata/activity/cata_activity_attraction.svg');
+  }
+  &.trans {
+    background-color: $trans;
+    .icon {
+      background-image: url('../images/cata_main/cata_trans.svg');
+    }
+  }
+  &.food {
+    background-color: $food;
+    .icon {
+      background-image: url('../images/cata_main/cata_food.svg');
+    }
+  }
+  &.hotel {
+    background-color: $stay;
+    .icon {
+      background-image: url('../images/cata_main/cata_hotel.svg');
+    }
+  }
+  &.activity {
+    background-color: $spot;
+    .icon {
+      background-image: url('../images/cata_main/cata_activity.svg');
+    }
+  }
+}
+
+//打開鍵
+.i-top-block.drop {
+  color: $main;
+  cursor: pointer;
+}
+
+//sm
+@media screen and (max-width: 767px) {
+  .i-item-top-inner  {
+    padding: 16px 12px;
+  }
+  .i-top-block {
+    &.time {
+      width: 48px;
+    }
+    &.type {
+      width: 28px;
+    }
+    &.edit {
+      margin-left: 8px;
+    }
+    &.drop {
+      width: 20px;
+    }
+  }
+  .i-top-block.time {
+    font-size: 14px;
+  }
+  .i-top-block.type>.type {
+    @include size(22px,22px);
+  }
+  .i-top-block.drop {
+    font-size: 16px;
+  }
+}
+
+//lg
+@media screen and (min-width: 768px) {
+  .i-item-top-inner  {
+    padding: 24px 16px;
+  }
+  .i-top-block {
+    &.time {
+      width: 64px;
+    }
+    &.type {
+      width: 64px;
+    }
+    &.drop {
+      width: 32px;
+    }
+  }
+  .i-top-block.time {
+    font-size: 15px;
+  }
+  .i-top-block.type>.type {
+    @include size(32px,32px);
+  }
+  .i-top-block.drop {
+    font-size: 20px;
+  }
+}
+

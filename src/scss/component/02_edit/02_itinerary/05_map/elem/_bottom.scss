@@ -1,0 +1,103 @@
+//選取地點資訊WRAP
+.add-map-info-wrap {
+  @include flexy;
+  flex-shrink: 0;
+  width: 80%;
+  position: relative;
+  flex-grow: 1;
+}
+
+@media screen and(max-width: 767px) {
+  .add-map-info-wrap {
+    padding: 32px 16px 88px 16px;
+    flex-direction: column;
+  }
+}
+
+@media screen and(min-width: 768px) {
+  .add-map-info-wrap {
+    padding: 32px 32px 32px 32px;
+  }
+}
+
+//已添加項目list WRAP
+.add-map-local-list {
+  @include flexy($dir: column);
+}
+//項目wrap
+.add-map-local-item {
+  @include flexy($ais: center);
+}
+.add-map-local-item-list-name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: $text;
+}
+//已添加景點
+.add-map-local-item {
+  position: relative;
+  margin-bottom: 12px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.add-map-local-item-title {
+  font-size: 15px;
+  color: $text;
+  margin-right: 20px;
+}
+
+.add-map-local-item-delete {
+  @include size(16px, 16px);
+  background-image: url('../images/essential/remove_icon.svg');
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .add-map-local-item-delete {
+    @include size(20px, 20px);
+    &:hover {
+      transform: translateY(2px);
+    }
+  }
+}
+
+//確認按鈕
+.add-map-info-submit-btn {
+  width: 100%;
+  height: 40px;
+  background-color: $main;
+  @include flexy($ais: center,$just: center);
+  cursor: pointer;
+}
+.add-map-info-submit-btn-text {
+  color: $white;
+}
+
+@media screen and (min-width: 768px) {
+  .add-map-info-submit-btn {
+    font-size: 15px;
+    width: 160px;
+    height: 40px;
+    @include absolute($t: 50%,$r: 0);
+    transform: translateY(-50%);
+  }
+  .add-map-local-item-list-name {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add-map-info-submit-btn {
+    font-size: 13px;
+    margin-top: 20px;
+    height: 36px;
+  }
+  .add-map-local-item-list-name {
+    font-size: 14px;
+  }
+}
+

@@ -1,0 +1,39 @@
+// 項目金額
+.budget-show-item-value {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.budget-show-item-change-val {
+  font-family: 'Roboto', sans-serif;
+  color: #c6c6c6;
+  padding-top: 6px;
+
+}
+
+.budget-list-item-total-title {
+  font-weight: 400;
+  color: $main;
+  margin-right: 8px;
+}
+// total總金額
+.budget-list-item-total-value {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: $main;
+}
+
+@media screen and (max-width: 767px) {
+  .budget-list-item-total-title { font-size: 14px;}
+  .budget-show-item-title {font-size: 14px;}
+  .budget-show-item-value {font-size: 16px;}
+  .budget-show-item-change-val { font-size: 12px;}
+  .budget-list-item-total-value { font-size: 18px;}
+}
+@media screen and (min-width: 768px) {
+  .budget-list-item-total-title { font-size: 16px;}
+  .budget-show-item-title {font-size: 16px;}
+  .budget-show-item-value {font-size: 18px;}
+  .budget-show-item-change-val { font-size: 13px;}
+  .budget-list-item-total-value { font-size: 22px;}
+
+}

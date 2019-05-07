@@ -1,0 +1,91 @@
+.budget-analysis-inner {
+  @include flexy($dir: column,$ais: center);
+}
+@media screen and (min-width: 768px) {
+  .budget-analysis-inner { padding: 32px;}
+}
+@media screen and (max-width: 767px) {
+  .budget-analysis-inner { padding: 32px 16px;}
+}
+.budget-analysis-block {
+  width: 100%;
+  @include flexy($ais: center,$just: center);
+  &.top { margin-bottom: 20px;}
+}
+.analysis-right-inner {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid $border;
+}
+.analysis-top {
+  @include flexy($ais: center,$just: center);
+  background-color: $main;
+  color: $white;
+  font-size: 14px;
+  border: 1px solid  $main;
+  .analysis-top-text {
+    text-align: center;
+    padding: 8px;
+    border-right: 1px solid $l-main;
+    &.type { width: 240px;}
+    &.percent { width: 100px;}
+    &.amount { width: 50%; border: none;}
+  }
+}
+
+
+.analysis-list {
+  @include flexy($dir: column)
+}
+.analysis-item {
+  @include flexy($ais: center);
+  border-bottom: 1px solid $border;
+  color: $side-text;
+  &.total { border: none;}
+}
+
+.analysis-item-block{
+  padding: 14px 8px;
+  font-size: 14px;
+  &.type { 
+    width: 240px;
+    border-right: 1px solid $border;
+  }
+  &.percent { 
+    width: 100px;
+    border-right: 1px solid $border;
+  }
+  &.amount { width: 50%;padding-right: 8px;}
+  &.total-text { 
+    margin-right: auto;
+    margin-left: 24px;
+    color: $main;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  &.total-amount {
+    color: $main;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.analysis-item-block.type {
+  @include flexy($ais: center);
+  .analysis-type.icon {
+    border-radius: 50%;
+    @include size(16px,16px);
+    margin-right: 10px;
+    &.transportation {background-color: $trans;}
+    &.shopping {background-color: $spot;}
+    &.entertainment {background-color: $trans-taxi;}
+    &.food {background-color: $food;}
+    &.others {background-color: #00bc84;}
+    &.hotel {background-color: $stay}
+  }
+}
+.analysis-item-text {
+  font-family: 'Open Sans', sans-serif;
+  text-align: right;
+}
+

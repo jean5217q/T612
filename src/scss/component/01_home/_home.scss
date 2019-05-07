@@ -1,0 +1,432 @@
+body {
+  
+}
+//背景層
+.all-container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    120deg,#ff8b59,#ff3aa3,#a059ff ,#26abff);
+  background-size: 300% 300%;
+  animation: gradients 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+//導覽列
+header {
+  width: 100%;
+  padding: 0 4vw;
+  font-family: 'Open Sans', sans-serif;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+  }
+  .main-logo {
+    width: 120px;
+    height: 36px;
+    background-image: url('../images/essential/main_logo.svg');
+  }
+  .signin-btn {
+    margin-left: auto;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 24px;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    font-weight: 300;
+    span {
+      padding: 0 4px;
+    }
+    &:hover {
+      background-color: white;
+      color: #00a2ff;
+      font-weight: 500;
+      box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@media screen and(max-width: 576px) {
+  header {
+    .header-inner{
+     padding-top: 36px;
+    }
+    .main-logo {
+      width: 80px;
+      height: 24px;
+    }
+  }
+}
+
+.content-container {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  position: relative;
+  padding: 12px;
+}
+
+.head-text-wrap {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 600px;
+  transition: 0.2s ease-in;
+  color: white;
+  .head-title {
+    padding-bottom: 1.5rem;
+    
+    letter-spacing: 0.2rem;
+    
+    &.lang-0 {
+      font-size: 3rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+    &.lang-1 {
+      font-size: 2.5rem;
+      letter-spacing: 0.5rem;
+      font-weight: 300;
+    }
+  }
+  .head-decor {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    .head-decor-line {
+      width: 100%;
+      height: 1px;
+      background-color: white;
+      margin-right: 0.5rem;
+      transition: 0.2s ease-in;
+      opacity: 0.5;
+      &.move { animation: move 0.8s}
+    }
+    .head-decor-icon {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+  .sub-title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    padding-top: 1.2rem;
+    margin-bottom: 2.4rem;
+  }
+  .enter-btn {
+    display: inline-block;
+    border: 1px solid white;
+    cursor: pointer;
+    padding: 0.8rem 4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    position: relative;
+    z-index: 0;
+    transition: 0.2s ease-out;
+    &:hover {
+      transform: translate(2px,2px);
+      &:before {
+        opacity: 1;
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+      90deg,#ff8b59,#ff3aa3,#a059ff ,#26abff);
+      background-size: 200% 200%;
+      animation: gradients 5s ease infinite;
+      box-shadow: 0px 10px 10px rgba(0,0,0,.1);
+      z-index: -1;
+      transition: 0.2s ease-out;
+      opacity: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px ) {
+  .head-text-wrap {
+    padding-left: 60px;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .head-text-wrap {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 575px ) {
+  .head-text-wrap {
+    top: 32px;
+    .head-title {
+      &.lang-0 {
+        font-size: 26px;
+      }
+      &.lang-1 {
+        font-size: 24px;
+      }
+    }
+    .head-decor {
+      width: 100%;
+    }
+  }
+}
+ 
+.head-visual {
+  bottom: 60px;
+  border-radius: 50%;
+  right: 0;
+  width: 50%;
+  padding-bottom: 50%;
+  transform: scale(1);
+  animation: skew 5s infinite linear alternate;
+  z-index: 100;
+  position: absolute;
+  .head-visual-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(100deg);
+    border-radius: 50%;
+    border: 1px solid white;
+    
+    &.outer-line {
+      width: 100%;
+      height: 100%;
+      animation: rotate2 15s infinite linear;
+    }
+    &.inner-line {
+        width: 90%;
+        height: 90%;
+        animation: rotate2 8s infinite linear;
+    }
+  }
+  .head-visual-line-circle {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    &.outer-circle {
+      width: 4%;
+      height: 4%;
+      top: -2%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.inner-circle {
+      width: 3%;
+      height: 3%;
+      top: 50%;
+      left: -1.5%;
+      transform: translateY(-50%);
+    }
+  }
+  .head-visual-big-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    // background-image: radial-gradient(rgba(255,255,255,0) 30%,rgba(255,255,255,0.6),white 95%);
+    transition: 0.3s;
+  }
+  .c {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    background-image: linear-gradient(
+    120deg,#ff8b59,#ff3aa3,#a059ff ,#26abff);
+    background-size: 300% 300%;
+    animation: gradients 5s ease infinite;
+    z-index: -1;
+  }
+}
+
+
+@media screen and (max-width: 1399px ) {
+  .head-visual {
+    padding-bottom: 45%;      
+    width: 45%;
+    right: 60px;
+    bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 575px ) {
+  .head-visual {
+    padding-bottom: 80%;      
+    width: 80%;
+    right: -30%;
+    bottom: -30%;
+  }
+}
+@media screen and (max-width: 767px ) {
+  .head-visual {
+    padding-bottom: 100%;      
+    width: 100%;
+    right: -30%;
+    bottom: -30%;
+  }
+}
+
+@keyframes gradients {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes move {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: translate(-50%,-50%) rotate(0) 
+  }
+  100% {
+    transform: translate(-50%,-50%) rotate(360deg)
+  }
+}
+
+@keyframes skew {
+  0% {
+    transform: scale(0.9) 
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes updown {
+  0% {
+    transform: translateY(0) 
+  }
+  100% {
+    transform: translateY(15px) 
+  }
+}
+
+@keyframes transb {
+
+}
+.mouse {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  background-color: yellow;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  
+  &.site{
+    background-image: url('../images/essential/site.svg');
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .mouse {display: none;}
+}
+
+
+.decor-circle1-wrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  bottom: 25%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.08);
+  animation: updown 4s infinite alternate;
+}
+.decor-circle1 {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(transparent 50%,white 80%);
+  mix-blend-mode: overlay;
+}
+.decor-text1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  z-index: 1;
+  font-family: 'Caudex', serif;
+}
+
+.site {
+  width: 40px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .decor-circle1-wrap {
+    display: none;
+  }
+}
+
+
+//切換語言
+.home-lang-wrap {
+  @include flexy($ais: center,$just: center);
+  border: 1px solid $white;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: auto;
+  .home-lang-btn {
+    font-size: 13px;
+    padding: 4px 6px;
+    cursor: pointer;
+    color: $white;
+    &.active {
+      background-color: $white;
+      color: $main;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+//主標
+.basic-title,.basic-title-edit {
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: $main;
+}
+//編輯主標
+.basic-title-edit {
+  padding-bottom: 3px;
+  border-bottom: 1px solid $border;
+  background-color: transparent;
+
+}
+//編輯標題icon
+.basic-title-edit-icon-wrap {
+  @include flexy($ais: center,$just: center);
+  @include size(24px,24px);
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  border-radius: 50%;
+  &:hover {
+    background-color: #edf5ff;
+  }
+}
+.basic-title-edit-icon {
+  @include size(25%,85%);
+  background-image: url('../images/essential/edit_dot.svg');
+}
+//編輯icon-wrap
+.basic-title-confirm-group {
+  @include flexy($ais: center);
+  margin-left: 6px;
+}
+//編輯icon框
+.basic-title-btn {
+  @include size(24px,24px);
+  @include flexy($ais: center,$just: center);
+  border-radius: 50%;
+  transition: 0.2s ease-out;
+  background-color: $main;
+  cursor: pointer;
+  &.edit {
+    margin-right: 12px;
+  }
+  &.cancel {
+  }
+  &:hover {
+    transform: translateY(2px);
+  }
+}
+//編輯icon圖
+.basic-title-btn-icon {
+  @include size(50%,50%);
+  &.edit {
+    background-image: url('../images/essential/check_white_icon.svg');
+  }
+  &.cancel {
+    background-image: url('../images/essential/remove_white_icon.svg');
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .basic-title,.basic-title-edit {
+    font-size: 20px;
+  }
+
+  .basic-title-edit-icon-wrap {
+    @include size(20px,20px);
+    margin-left: 8px;
+  }
+  .basic-title-edit {
+    width: 100%;
+  }
+}
+
+@media screen and(min-width: 768px) {
+  .basic-title,.basic-title-edit {
+    font-size: 22px;
+  }
+  .basic-title-btn {
+    @include size(24px,24px);
+  }
+  .basic-title-edit-icon-wrap {
+    @include size(24px,24px);
+    margin-left: 12px;
+  }
+  .basic-title-edit {
+    width: 80%;
+  }
+}
