@@ -1,0 +1,46 @@
+.list-empty-wrap {
+  @include flexy($dir: column,$ais: center,$just: center);
+}
+.list-empty-img {
+  margin-bottom: 8px;
+  &.plan {
+    background-image: url('../images/empty_icon/plan_empty.svg');
+  }
+  &.cost {
+    background-image: url('../images/empty_icon/cost_empty.svg');
+  }
+}
+.list-empty-text {
+  font-weight: 400;
+  color: $side-text;
+}
+@media screen and(max-width: 767px){
+  .list-empty-wrap {
+    padding: 40px 0;
+    &.overview {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .list-empty-img {
+    @include size(100px,100px);
+  }
+  .list-empty-text {
+    font-size: 16px;
+  }
+}
+@media screen and(min-width: 768px){
+  .list-empty-wrap {
+    padding: 32px 0;
+    &.overview {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .list-empty-img {
+    @include size(120px,120px);
+  }
+  .list-empty-text {
+    font-size: 18px;
+  }
+}

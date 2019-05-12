@@ -1,0 +1,60 @@
+//sm-導覽列WRAP
+.sm-edit-bottom-nav {
+  @include fixed($b: 0,$l: 0,$z: 1000);
+  @include flexy($ais: center);
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0px -3px 4px rgba(0,0,0,0.04);
+}
+
+//sm-導覽列內部
+.sm-edit-bottom-inner {
+  @include flexy($ais: center);
+  width: 100%;
+}
+//sm-單個導覽列連結WRAP
+.sm-edit-bottom-item {
+  flex: 1;
+  @include flexy($dir: column,$ais: center);
+  cursor: pointer;
+}
+//sm-連結icon
+.sm-edit-bottom-icon {
+  &.user {
+    background-color: $main;
+    border-radius: 50%;
+    border: 1px solid $main;
+    overflow: hidden;
+    .sm-nav-icon {
+      background-image: url('../images/essential/user.svg');
+    }
+  }
+  &.menu {
+    .sm-nav-icon {
+      background-image: url('../images/essential/menu.svg');
+    }
+  }
+  .sm-nav-icon {
+    background-size: 100%,100%;
+    background-position: center center;
+    @include size(100%,100%);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .sm-edit-bottom-nav {height: 40px;}
+  .sm-edit-bottom-icon {
+    &.user {@include size(21px,21px)}
+    &.menu {@include size(20px,20px)} 
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 959px) {
+  .sm-edit-bottom-nav {height: 42px;}
+  .sm-edit-bottom-icon {
+    &.user {@include size(24px,24px)}
+    &.menu {@include size(23px,23px)} 
+  }
+}
+@media screen and(min-width: 960px) {
+  .sm-edit-bottom-nav {display: none;}
+}

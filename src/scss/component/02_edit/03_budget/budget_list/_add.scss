@@ -1,0 +1,133 @@
+//添加東西框
+.add-budget-form {
+  background-color: $white;
+  transition: 0.2s ease-out;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid $border;
+  color: $side-text;
+  &.edit {
+    border-bottom: 1px solid $border;
+  }
+}
+//添加東西框內層主體
+.add-budget-form-inner {
+  width: 100%;
+}
+@media screen and(min-width: 768px) {
+  .add-budget-form-inner {
+    padding: 60px 20px 40px 20px;
+    @include flexy($ais: center,$just: center);
+    &.edit {
+      padding: 48px 20px 32px;
+      // background-color: #fff9e2;
+    }
+  }
+}
+@media screen and(max-width: 767px) {
+  .add-budget-form {
+    width: 100%;
+  }
+  .add-budget-form-inner {
+    padding: 16px;
+    padding-top: 60px;
+  }
+}
+//取消按鈕
+.add-budget-cancel-btn {
+  @include size(20px,20px);
+  @include absolute($r: 20px,$t: 16px,$z: 1);
+  background-image: url('../images/essential/remove_circle_icon.svg');
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  &:hover {
+    transform: translateY(2px);
+  }
+}
+
+
+
+//選單共同FRAME
+.budget-input {
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid $border;
+  transition: $ease;
+  @include flexy($ais: center);
+  &.type { position: relative; cursor: pointer}
+  &.currency { position: relative; cursor: pointer}
+  &:focus {border: 1px solid $main;}
+  &.style {border: 1px solid $main;}
+}
+//下拉選單Title
+.budget-drop-title-wrap {
+  width: 100%;
+  @include flexy($ais: center);
+  .budget-drop-title {margin-right: auto;}
+}
+//下拉選單UL
+.budget-drop-ul {
+  @include absolute($t: 35px,$l: -1px,$z: 10);
+  
+  background-color: $white;
+  cursor: pointer;
+  width: calc(100% + 2px);
+  border: 1px solid $border;
+  border-top: none;
+  transition: $ease;
+  &.type {
+      height: 108px;
+      overflow-y: scroll;
+  }
+  &.style { border: 1px solid $main;border-top: none;}
+}
+.budget-type-item {
+  @include flexy($ais: center);
+  padding: 0 8px;
+  height: 36px;
+  border-bottom: 1px solid $border;
+  transition: $ease;
+  &:last-child {border: none;}
+  &:hover { color: $main;}
+  &.style { border-bottom: 1px solid $main;&:last-child {border: none;}}
+}
+.budget-type-icon {
+  @include size(14px,14px);
+  border-radius:  50%;
+  margin-right: 8px;
+  &.transportation {background-color: $trans;}
+  &.shopping {background-color: $spot;}
+  &.entertainment {background-color: $trans-taxi;}
+  &.food {background-color: $food;}
+  &.hotel {background-color: $stay;}
+  &.others {background-color: #00bc84;}
+}
+.add-budget-button {
+  flex-shrink: 0;
+  padding: 0 20px;
+  height: 36px;
+  color: $white;
+  background-color: $main;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .budget-input { 
+    font-size: 15px;
+    margin-right: 6px;
+    &.type {width: 200px;flex-shrink: 0;}
+    &.item,&.cost {width: 100%;}
+    &.currency {width: 100px;flex-shrink: 0;}
+  }
+  .budget-type-item  { font-size: 15px;}
+  .add-budget-button { font-size: 15px;}
+}
+@media screen and (max-width: 768px) {
+  .budget-input { 
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .budget-type-item  { font-size: 14px;}
+  .add-budget-button { font-size: 14px;width: 100%;}
+}

@@ -1,0 +1,81 @@
+//ICON
+.add-act-icon.sub {
+  //飛機
+  &.flight {
+    background-color: $trans-flight;
+    &:after {
+      background-image: url('../images/sub_cata/trans/cata_trans_flight.svg');
+    } 
+  }
+  //火車
+  &.train {
+    background-color: $trans-train;
+    &:after {
+      background-image: url('../images/sub_cata/trans/cata_trans_train.svg');
+    }   
+  }
+  //輪船
+  &.cruise {
+    background-color: $trans-cruise;
+    &:after {
+      background-image: url('../images/sub_cata/trans/cata_trans_cruise.svg');
+    }  
+  }
+  //巴士
+  &.bus {
+    background-color: $trans-bus;
+    &:after {
+      background-image: url('../images/sub_cata/trans/cata_trans_bus.svg');
+    }
+  }
+  //計程車
+  &.taxi {
+    background-color: $trans-taxi;
+    &:after {
+      background-image: url('../images/sub_cata/trans/cata_trans_taxi.svg');
+    }    
+  }
+  //自駕
+  &.road_trip {
+    background-color: $trans-car;
+    &:after {
+      background-image: url('../images/sub_cata/trans/cata_trans_car.svg');
+    }  
+  }
+}
+
+@media screen and(min-width: 768px) {
+  //ICON
+.add-act-icon.sub {
+  &.flight {
+    &:hover {
+      background-color: $light-trans-flight
+    }    
+  }
+  &.train {
+    &:hover {
+      background-color: $light-trans-train;
+    }    
+  }
+  &.cruise {
+    &:hover {
+      background-color: $light-trans-cruise;
+    }    
+  }
+  &.bus {
+    &:hover {
+      background-color: $light-trans-bus;
+    }    
+  }
+  &.taxi {
+    &:hover {
+      background-color: $light-trans-taxi;
+    }    
+  }
+  &.road-trip {
+    &:hover {
+      background-color: $light-trans-car;
+      }    
+    }
+  }
+}

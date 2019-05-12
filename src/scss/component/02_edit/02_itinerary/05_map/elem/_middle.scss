@@ -1,0 +1,41 @@
+//地圖實體
+.add-map-content {
+  width: 100%;
+  height: 70vh;
+  background-color: gray;
+}
+
+.confirm-wrap {
+  padding: 16px;
+  @include flexy($dir: column);
+}
+
+.confirm-title-wrap {
+  @include flexy($ais: center);
+  margin-bottom: 12px;
+}
+.confirm-tag-local {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text;
+  &:first-child {
+    margin-right: 8px;
+  }
+}
+.confirm-btn {
+  height: 32px;
+  @include flexy($ais: center, $just: center);
+  font-size: 14px;
+  font-weight: 300;
+  background-color: $group1first;
+  color: $white;
+  cursor: pointer;
+}
+
+// .pac-matched {
+//   color: $text;
+// }
+
+// .pac-container {
+//   box-shadow: 0;
+// }

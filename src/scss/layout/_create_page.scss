@@ -1,0 +1,25 @@
+body {
+  &.create_page {
+    height: 100vh;
+    background-image: linear-gradient(120deg,#ff8b59,#ff3aa3);
+    background-size: 500% 500%;
+    animation: gradientss 15s ease infinite;
+  }
+}
+.linear-gradient-bg {
+  @include flexy($just: center);
+  // padding-top: 15vh;
+  // padding-bottom: 60px;
+}
+
+@keyframes gradientss {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}

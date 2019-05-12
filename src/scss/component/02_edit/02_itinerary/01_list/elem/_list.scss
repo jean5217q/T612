@@ -1,0 +1,109 @@
+//運輸工具圖標WRAP
+.i-top-main-block {
+  &.line,&.circle {
+    position: relative;
+    @include flexy($just: center,$ais: center);
+    flex-shrink: 0;
+  }
+  &.info { margin-right: 8px;}
+}
+
+//時間地點WRAP
+.i-top-main-place {
+  &:nth-child(1) {
+    margin-top: 0;
+  }
+}
+//主標
+.i-top-main-title { 
+  font-weight: 400;
+  line-height: 1.2;
+}
+//小標
+.i-top-main-sub {
+  font-weight: 400;
+  color: $side-text;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+//線
+.trans-line-line {
+  position: relative;
+  @include size(1px,100%);
+  background-color: $lightgroup1first;
+}
+.trans-line-icon {
+  @include flexy($ais: center,$just: center);
+  @include absolute($t: 50%,$l: 50%);
+  transform: translate(-50%,-50%);
+  background-color: $white;
+  border-radius: 50%;
+}
+.trans-line-icon-inner {
+  @include size(95%,95%);
+  &.flight {
+    background-image: url('../images/list_sub_cata/trans/trans_sm_flight.svg');
+  }
+  &.train {
+    background-image: url('../images/list_sub_cata/trans/trans_sm_train.svg');
+  }
+  &.cruise {
+    background-image: url('../images/list_sub_cata/trans/trans_sm_cruise.svg');
+  }
+  &.bus {
+    background-image: url('../images/list_sub_cata/trans/trans_sm_bus.svg');
+  }
+  &.taxi {
+    background-image: url('../images/list_sub_cata/trans/trans_sm_taxi.svg');
+  }
+  &.road_trip {
+    background-image: url('../images/list_sub_cata/trans/trans_sm_car.svg');
+  }
+  
+}
+//圓
+.main-block-circle {
+  @include size(5px,5px);
+  background-color: $main;
+}
+//sm
+@media screen and(max-width: 767px) {
+  .i-top-main-block {
+    &.circle,&.line {
+      width: 40px;
+    } 
+  }
+  .i-top-main-place {
+    margin-top: 16px;
+  }
+  .i-top-main-title {
+    font-size: 14px;
+  }
+  .i-top-main-sub {
+    font-size: 12px;
+  }
+  .trans-line-icon {
+    @include size(24px,24px);
+  }
+}
+//lg
+@media screen and(min-width: 768px) {
+  .i-top-main-block {
+    &.circle,&.line {
+      width: 56px;
+    } 
+  }
+  .i-top-main-place {
+    margin-top: 20px;
+  }
+  .i-top-main-title {
+    font-size: 16px;
+  }
+  .i-top-main-sub {
+    font-size: 16px;
+  }
+  .trans-line-icon {
+    @include size(32px,32px);
+  }
+}

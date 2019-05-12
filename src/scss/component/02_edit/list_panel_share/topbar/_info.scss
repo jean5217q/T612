@@ -1,0 +1,112 @@
+//地點右側資訊
+.top-block {
+  @include flexy($ais: center);
+  &.budget {
+    width: 100%;
+  }
+}
+//天氣日期單個WRAP
+.top-inner-block{
+  &.temp {
+    display: flex;
+    align-items: flex-start;
+    border-right: 1px solid $white;
+    padding-right: 8px;
+  }
+  //展開編輯區
+  &.edit {
+    width: 20px;
+    flex-shrink: 0;
+    @include flexy($just: flex-end);
+    cursor: pointer;
+    margin-left: 12px;
+  }
+  &.date {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 12px;
+  }
+  &.budget {
+    margin-right: auto;
+  }
+  &.exchange {
+    flex-shrink: 0;
+    width: 20px;
+    @include flexy($ais: center,$just: center);
+  }
+}
+//編輯面板icon
+.top-edit-icon {
+  background-image: url('../images/essential/edit_dot_white.svg');
+}
+.exchange-icon {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+@media screen and(max-width: 767px) {
+  .top-edit-icon {
+    @include size(4px,16px);
+  }
+}
+@media screen and(min-width: 768px) {
+  .top-edit-icon {
+    @include size(5px,20px);
+  }
+}
+
+
+//天氣
+.top-local-info-temp-icon {
+  background-color: yellow;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+//sm-天氣
+@media screen and(max-width: 767px) {
+  .top-local-info-temp-icon {
+    @include size(16px,16px);
+  }
+}
+//lg-天氣
+@media screen and(min-width: 768px) {
+  .top-local-info-temp-icon {
+    @include size(20px,20px);
+  }
+}
+
+//sm-月份日期
+@media screen and(max-width: 767px) {
+    .top-local-info-text {
+      font-size: 17px;
+      margin-right: 4px;
+    }
+    .top-local-info-week {
+      font-size: 12px;
+      transform: translateY(-2px);
+      font-weight: 500;
+    }
+  .top-inner-block.edit {
+    width: 10px;
+  }
+}
+//lg-月份日期
+@media screen and(min-width: 768px) {
+  .top-local-info-text {
+    font-size: 22px;
+    margin-right: 5px;
+    &.temp {
+      margin-right: 0;
+    }
+
+  }
+  .top-local-info-week {
+    font-size: 13px;
+    transform: translateY(-2px)
+  }
+
+  
+}
+
+.top-local-info-temp-side.c {
+  transform: translateX(-2px)
+}

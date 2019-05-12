@@ -1,0 +1,79 @@
+
+.edit-cata-wrap {
+  position: relative;
+  width: 100%;
+  @include flexy($dir: column);
+  background-color: $white;
+}
+
+//lg-面板
+@media screen and(min-width: 768px) {
+  .edit-cata-wrap {
+    max-width: 700px;
+    margin-top: 100px;
+    border: 1px solid $border;
+    border-radius: 24px;
+    box-shadow: 0px 15px 20px $shadow;
+    overflow: hidden;
+  }
+}
+@media screen and(min-width: 1100px) {
+  .edit-cata-wrap {
+    max-width: 800px;
+  }
+}
+@media screen and(min-width: 1200px) {
+  .edit-cata-wrap {
+    max-width: 900px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//主要類別WRAP
+.edit-content-wrap {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  color: $group1first;
+  @include flexy($dir: column,$ais: center);
+}
+
+
+//lg-行程表WRAP
+@media screen and(min-width: 768px) {
+  .edit-content-wrap.cata {
+    max-width: 700px;
+    border: 1px solid $border;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0px 10px 15px $shadow;
+    transition: 0.2s ease-out;
+    margin: 150px 0;
+    &:hover {
+      box-shadow: 0px 20px 25px $shadow;
+    }
+  }
+}
+@media screen and(min-width: 1100px) {
+  .edit-content-wrap.cata {
+    max-width: 800px;
+  }
+}
+@media screen and(min-width: 1200px) {
+  .edit-content-wrap.cata {
+    max-width: 900px;
+  }
+}

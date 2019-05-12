@@ -1,0 +1,21 @@
+.top-title {
+  font-weight: 300;
+  margin-right: auto;
+  &.lang-0 {font-family: 'Open Sans', sans-serif;}
+  &.lang-1 {letter-spacing: 3px;}
+  &.date {
+    font-family: 'Open Sans', sans-serif;
+    &.right { margin-left: auto;}
+  }
+}
+.top-title-week { transform: translateY(-2px) }
+@media screen and(max-width: 767px) {
+  .top-title {font-size: 18px;}
+  .top-title.date {font-size: 19px;}
+  .top-title-week { font-size: 12px; padding-left: 2px;}
+}
+@media screen and(min-width: 768px) {
+  .top-title {font-size: 22px;}
+  .top-title.date {font-size: 23px;}
+  .top-title-week { font-size: 14px; padding-left: 4px;}
+}

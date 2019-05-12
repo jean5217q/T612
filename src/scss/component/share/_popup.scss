@@ -1,0 +1,156 @@
+.pop-up-container {
+  height: 100vh;
+  .pop-up-layer {
+    @include absolute($t: 0,$l: 0);
+    @include size(100%,100%);
+    background-color: black;
+    opacity: 0.5;
+  }
+  .pop-up-inner {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    @include absolute($t:50%,$l:50%);
+    transform: translate(-50%,-50%);
+    @include flexy($dir: column);
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .pop-up-container {
+    width: calc(100%);
+    @include fixed($t: -28px,$l: 0,$z: 100);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .pop-up-container {
+    width: calc(100% - 200px);
+    @include fixed($t: 0,$l: 200px,$z: 100);
+  }
+}
+
+.pop-up-top {
+  @include flexy($just: flex-end,$ais: center);
+  width: 100%;
+  height: 32px;
+  background-color: $main;
+}
+.pop-up-close {
+  @include size(15px,15px);
+  background-image: url('../images/essential/remove_white_icon.svg');
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.pop-up-content {
+  padding: 24px 16px;
+  background-color: $white;
+  @include flexy($dir: column,$ais: center);
+}
+
+//上傳圖像popup
+
+.pop-up-content.user-img {
+  @include flexy($dir: column,$ais: center);
+  .change-user-img-wrap {
+    position: relative;
+    border: 2px dotted $main;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .change-user-img {
+    @include size(100%,100%);
+    background-image: url('../images/essential/camera.svg');
+    background-size: cover;
+    &.loading {
+      opacity: 0.4;
+    }
+  }
+  .change-img-input,.change-img-btn {
+    width: 100%;
+    border: 1px solid $main;
+    text-align: center;
+    cursor: pointer;
+  }
+  .change-img-input {
+    color: $main;
+    margin-bottom: 12px;
+  }
+  .change-img-btn {
+    font-weight: 300;
+    background-color: $main;
+    color: $white;
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .pop-up-content.user-img {
+    .change-user-img-wrap {
+      @include size(160px,160px);
+    }
+    .change-img-btn,.change-img-input {
+      font-size: 13px;
+      padding: 8px;
+    }
+  }
+  .pop-up-confirm-text {
+    font-size: 13px;
+  }
+}
+@media screen and(min-width: 768px) {
+  .pop-up-content.user-img {
+    .change-user-img-wrap {
+      @include size(200px,200px);
+    }
+    .change-img-btn,.change-img-input {
+      font-size: 15px;
+      padding: 12px;
+    }
+  }
+  .pop-up-confirm-text {
+    font-size: 15px;
+  }
+}
+
+//delete
+.pop-up-delete-text {
+  text-align: center;
+  font-size: 16px;
+  color: $main;
+  padding-bottom: 36px;
+}
+.pop-up-btn-wrap {
+  @include flexy($ais: center,$just: center);
+}
+
+.pop-up-btn {
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: $ease;
+  &:hover {
+    transform: translate(1px,1px)
+  }
+  &.confirm {
+    background-color: $main;
+    border: 1px solid $main;
+    color: $white;
+    margin-right: 16px;
+  }
+  &.delete {
+    border: 1px solid $main;
+    color: $main;
+  }
+}
+
+.pop-up-confirm-text {
+  text-align: center;
+  color: $main;
+}
+.pop-up-confirm-icon {
+  @include size(28px,28px);
+  background-image: url('../images/essential/ok_icon.svg');
+  margin-bottom: 16px;
+}
