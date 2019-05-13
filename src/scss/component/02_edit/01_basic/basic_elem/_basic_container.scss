@@ -1,0 +1,25 @@
+// basic-三大區塊
+.basic-container {
+  @include flexy;
+  border-bottom: 1px solid $border;
+  &.top {align-items: center;}
+  &.sub {flex-direction: column;}
+  &.country {
+    flex-direction: column;
+    border: none;
+  }
+}
+@media screen and(min-width: 768px) {
+  .basic-container {
+    &.top { padding: 20px 16px;}
+    &.sub { padding: 24px 16px;}
+    &.country { padding: 24px 16px 0 16px;}
+  }
+}
+@media screen and(max-width: 767px) {
+  .basic-container {
+    &.top { padding: 16px 16px;}
+    &.sub { padding: 24px 16px;}
+    &.country { padding: 24px 16px 0 16px;}
+  }
+}

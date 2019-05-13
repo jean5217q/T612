@@ -1,0 +1,157 @@
+.loading-circle-wrap {
+  @include size(140px,140px);
+  @include fixed($t:50%,$l:50%);
+  transform: translate(calc(-50% + 100px),-65%);
+}
+@media screen and (min-width: 1200px) {
+  .loading-circle-wrap {
+    @include size(140px,140px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .loading-circle-wrap {
+    @include size(120px,120px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .loading-circle-wrap {
+    @include size(100px,100px);
+    @include fixed($t:50%,$l:50%);
+    transform: translate(-50%,-65%);
+  }
+}
+.loading-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background-size: 300% 300%;
+  &.bg {
+    @include size(70%,70%);
+    background-image: linear-gradient( 120deg,#ff8b59,#ff3aa3,#a059ff,#26abff);
+    animation: loading_skew .4s 0.4s infinite alternate ease-in-out,loading_gradients 10s infinite;
+  }
+  &.md {
+    background-image: linear-gradient( 120deg,#26abff,#a059ff,#ff3aa3,#ff8b59);
+    @include size(50%,50%);
+    animation: loading_skew .4s infinite alternate ease-in-out,loading_gradients 5s infinite;
+  }
+  &.sm {
+    background-image: linear-gradient( 120deg,#ff8b59,#ff3aa3,#a059ff,#26abff);
+    @include size(30%,30%);
+    animation: loading_skew .4s infinite alternate  ease-in-out,loading_gradients 3s infinite; 
+  }
+}
+.loading-circle-text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-45%,-50%) scale(0.95);
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  white-space:nowrap;
+  animation: color_change 8s infinite alternate,text_loading_skew .4s 0.4s infinite alternate  ease-in-out;
+}
+@media screen and (min-width: 960px) {
+  .loading-circle-wrap {
+    @include size(80px,80px);
+  }
+  .loading-circle-text {
+    font-size: 13px;
+    bottom: -12px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .loading-circle-wrap {
+    @include size(60px,60px);
+    @include fixed($t:50%,$l:50%);
+    transform: translate(-55%,calc(-50% - 20px));
+  }
+  .loading-circle-text {
+    font-size: 12px;
+    bottom: -16px;
+  }
+}
+
+@keyframes color_change {
+  0% {
+    color: #ff3aa3;
+  }
+  50% {
+    color: #a059ff;
+  }
+  100% {
+    color: #26abff;
+  }
+}
+@keyframes loading_skew {
+  0% {
+    transform: translate(-50%,-50%) scale(0.95) ;
+  }
+  100% {
+    transform: translate(-50%,-50%) scale(1);
+  }
+} 
+
+@keyframes text_loading_skew {
+  0% {
+    transform: translate(-45%,-50%) scale(0.95) ;
+  }
+  100% {
+    transform: translate(-45%,-50%) scale(1);
+  }
+} 
+@keyframes loading_gradients {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% { 
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+//sm-loader
+.sm-loader {
+  @include size(30px,30px);
+  @include absolute($t: 50%,$l: 50%);
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  border: 5px solid $border;
+  border-top: 5px solid $main;
+  overflow: hidden;
+  animation: loading_rotate 1s ease infinite;
+}  
+.sm-loader-wrap {
+  width: 100%;
+  padding: 60px;
+  position: relative;
+  &.budget {
+    padding: 32px;
+    border-bottom: 1px solid $border;
+  }
+  &.itinerary {
+    padding: 40px;
+    border-top: 1px solid $border;
+  }
+}   
+@keyframes loading_rotate {
+  0% {
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+
+.background-loading {
+  @include size(100%,100%);
+  @include fixed($t: 0,$l: 0);
+  background-image: linear-gradient( 120deg,#ff8b59,#ff3aa3,#a059ff,#26abff);
+  background-size: 300%,300%;
+  animation: loading_gradients 3s infinite alternate;
+}

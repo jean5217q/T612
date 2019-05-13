@@ -1,0 +1,86 @@
+//個人頁面上半部
+.account-top {
+  width: 100%;
+  @include flexy($ais: center,$just: center);
+  padding: 32px 48px;
+  border-bottom: 1px solid $border;
+}
+.account-top-inner {
+  width: 100%;
+  max-width: 660px;
+  @include flexy($ais: center);
+}
+
+.account-top-left {
+  @include flexy($ais: center,$just: center);
+}
+.user-photo-container {
+  position: relative;
+}
+.user-photo {
+  @include size(100%,100%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('../images/essential/user_photo.svg');
+  border: 1px solid $l-main;
+}
+
+.user-photo-edit-btn {
+  @include absolute($b: -4px,$r: -4px);
+  @include flexy($ais: center,$just: center);
+  border-radius: 50%;
+  cursor: pointer;
+  .user-photo-edit-icon {
+    @include size(70%,70%);
+    background-image: url('../images/essential/edit_blue_icon.svg');
+  }
+}
+
+.user-text {
+  &.name {
+    color: $text;
+    font-weight: 400;
+    padding-bottom: 16px;
+  }
+  &.email {
+    color: $side-text;
+    padding-bottom: 16px;
+  }
+  &.log-out {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 2px 4px;
+    border: 1px solid #b5b5b5;
+    color: #b5b5b5;
+    cursor: pointer;
+    transition: $ease;
+    &:hover {
+      background-color: $main;
+      color: $white;
+      font-size: 300;
+      border-bottom: 1px solid $main;
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .account-top-left {margin-right: 24px;}
+  .user-photo-container {@include size(80px,80px);}
+  .user-photo-edit-btn {@include size(16px,16px);}
+  .user-text.name {font-size: 16px;}
+  .user-text.email {font-size: 14px;}
+  .user-text {
+    font-size: 12px;
+  }
+}
+@media screen and(min-width: 768px) {
+  .account-top-left {margin-right: 40px;}
+  .user-photo-container {@include size(120px,120px);}
+  .user-photo-edit-btn {@include size(20px,20px);}
+  .user-text.name {font-size: 20px;}
+  .user-text.email {font-size: 15px;}
+  .user-text {
+    font-size: 12px;
+  }
+}

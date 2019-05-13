@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 36 24" style="enable-background:new 0 0 36 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ED2939;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g>
+	<rect class="st0" width="36" height="24"/>
+	<rect y="12" class="st1" width="36" height="12"/>
+	<path class="st1" d="M12.3,6c0,2.5-2,4.5-4.5,4.5S3.3,8.5,3.3,6s2-4.5,4.5-4.5S12.3,3.5,12.3,6z"/>
+	<path class="st0" d="M13.8,6c0,2.4-1.9,4.3-4.3,4.3S5.2,8.4,5.2,6s1.9-4.3,4.3-4.3S13.8,3.6,13.8,6z"/>
+	<path id="star" class="st1" d="M8.4,6.1L7.8,5.6L7.2,6.1l0.2-0.8L6.8,4.9l0.8,0l0.2-0.8L8,4.9l0.8,0L8.2,5.4L8.4,6.1z"/>
+	<g transform="translate(577.18853,0)">
+		<path id="star_1_" class="st1" d="M13.2,6.1l-0.6-0.5L12,6.1l0.2-0.8l-0.6-0.5l0.8,0l0.2-0.8l0.2,0.8l0.8,0L13,5.4L13.2,6.1z"/>
+	</g>
+	<g transform="translate(288.88853,-214.21117)">
+		<path id="star_2_" class="st1" d="M10.8,4.3l-0.6-0.5L9.6,4.3l0.2-0.8L9.2,3.1l0.8,0l0.2-0.8l0.2,0.8l0.8,0l-0.6,0.5L10.8,4.3z"/>
+	</g>
+	<g transform="translate(107.99953,342.74883)">
+		<path id="star_3_" class="st1" d="M9.3,9L8.7,8.5L8.1,9l0.2-0.8L7.7,7.7l0.8,0L8.7,7l0.2,0.8l0.8,0L9.1,8.2L9.3,9z"/>
+	</g>
+	<g transform="translate(469.18853,342.74883)">
+		<path id="star_4_" class="st1" d="M12.3,9l-0.6-0.5L11.1,9l0.2-0.8l-0.6-0.5l0.8,0L11.7,7l0.2,0.8l0.8,0l-0.6,0.5L12.3,9z"/>
+	</g>
+</g>
+</svg>
