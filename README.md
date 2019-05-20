@@ -1,5 +1,5 @@
 # T612
-
+Web Link: https://jean5217q.github.io/T612/#/
 ## Technologies
 
 * Scss
@@ -15,4 +15,5 @@
 ## Features
 ### Member system
 Users can sign up and login by email.
-![fd](https://raw.github.com/jean5217q/T612/master/screenshot/basic.png) 
+
+![basic](https://raw.github.com/jean5217q/T612/master/screenshot/basic.png) 
