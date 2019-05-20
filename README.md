@@ -2,7 +2,7 @@
 Web Link: https://jean5217q.github.io/T612/#/
 ## Technologies
 
-* Scss
+* SCSS
 * CSS Animation
 * React
 * Redux
@@ -14,28 +14,25 @@ Web Link: https://jean5217q.github.io/T612/#/
 
 ## Features
 ### Member system
-Users can sign up and login by email.
-
-
+Users can sign up and sign in by email.
 
 ### Create travel project
-Users can select countries and fill the basic info about this trip.
+Users can select countries they want to travel and fill the basic info about it.
 
 ![selected_country](https://raw.github.com/jean5217q/T612/master/screenshot/selected_country.png) 
 
 ![fill_info](https://raw.github.com/jean5217q/T612/master/screenshot/fill_info.png) 
 
 ### Learn about info of the country
-In this page user can get the name and the period of the trip and  details of the country they would visit.
+user can get the title and the period of the trip and details of the country they would visit.
 
 ![basic](https://raw.github.com/jean5217q/T612/master/screenshot/basic.png) 
 
 ### Add daily plan 
-User can add different type of activities and save the coordinate of the site.
+User can make planing list by adding different type of activities and save the coordinate of the place.
 
 ![step](https://raw.github.com/jean5217q/T612/master/screenshot/step.png)
-
-
+![list](https://raw.github.com/jean5217q/T612/master/screenshot/list.png)
 
 ### Add daily cost 
 User can add cost in different currency and it would transfer to the currency user set in the account page automaticly.
@@ -43,7 +40,7 @@ User can add cost in different currency and it would transfer to the currency us
 ![budget](https://raw.github.com/jean5217q/T612/master/screenshot/budget.png)
 
 ### Get budget analysis
-After the trip you can get the analysis result based on types.
+User can get the analysis result based on the cost.
 
 ![analysis](https://raw.github.com/jean5217q/T612/master/screenshot/analysis.png)
 
