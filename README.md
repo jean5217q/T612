@@ -19,7 +19,7 @@ Users can sign up and sign in by email.
 ### Create travel project
 Users can select countries they want to travel and fill the basic info about it.
 
-![selected_country](https://raw.github.com/jean5217q/T612/master/screenshot/selected_country.png) 
+![select_country](https://raw.github.com/jean5217q/T612/master/screenshot/select_country.png) 
 
 ![fill_info](https://raw.github.com/jean5217q/T612/master/screenshot/fill_info.png) 
 
