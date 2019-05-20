@@ -23,7 +23,7 @@ Users can select countries and fill the basic info about this trip.
 
 ![selected](https://raw.github.com/jean5217q/T612/master/screenshot/selected.png) 
 
-![create](https://raw.github.com/jean5217q/T612/master/screenshot/selected.png) 
+![create](https://raw.github.com/jean5217q/T612/master/screenshot/created.png) 
 
 ### Learn about info of the country
 In this page user can get the name and the period of the trip and  details of the country they would visit.
@@ -45,7 +45,7 @@ After the trip you can get the analysis result based on types.
 
 ![analysis](https://raw.github.com/jean5217q/T612/master/screenshot/analysis.png)
 
-###Setting user account
+### Setting user account
 User can change preference of the name, photo, currency and background color.
 
 
