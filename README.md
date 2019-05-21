@@ -1,7 +1,11 @@
 # T612
 Web Link: https://jean5217q.github.io/T612/#/
-## Technologies
 
+## Intro
+A web site for people to make the travel plans and arrange the budget.
+![homepage](https://raw.github.com/jean5217q/T612/master/screenshot/homepage.png) 
+
+## Technologies
 * SCSS
 * CSS Animation
 * React
@@ -47,4 +51,5 @@ User can get the analysis result based on the cost.
 ### Setting user account
 User can change preference of the name, photo, currency and background color.
 
+![user](https://raw.github.com/jean5217q/T612/master/screenshot/user.png)
 

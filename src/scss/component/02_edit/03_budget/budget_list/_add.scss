@@ -79,6 +79,10 @@
       height: 108px;
       overflow-y: scroll;
   }
+  &.currency {
+    height: 108px;
+    overflow-y: scroll;
+  }
   &.style { border: 1px solid $main;border-top: none;}
 }
 .budget-type-item {
