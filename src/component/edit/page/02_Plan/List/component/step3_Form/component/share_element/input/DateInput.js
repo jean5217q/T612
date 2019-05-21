@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DateSelector from '../time/DateSelector';
 
-class Time extends Component {
+class DateInput extends Component {
   render() {
     const {
       label,
@@ -21,4 +22,10 @@ class Time extends Component {
   }
 }
 
-export default Time
+DateInput.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.object,
+  setTime: PropTypes.func,
+}
+
+export default DateInput

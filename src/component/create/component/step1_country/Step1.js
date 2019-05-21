@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Board_Wrap from '../../../shareComponent/countryBoard/Board_Wrap';
 import Board_Submit from './component/Board_Submit';
 import * as nation from '../../../../data/country';
@@ -51,6 +52,13 @@ class Step1 extends Component {
   }
 }
 
-
+Step1.propTypes = {
+  lang: PropTypes.number,
+  step2: PropTypes.bool,
+  goToStep2: PropTypes.func,
+  addToCountryList: PropTypes.func,
+  removeFromCountryList: PropTypes.func,
+  selected_countryList: PropTypes.array
+}
 
 export default Step1;

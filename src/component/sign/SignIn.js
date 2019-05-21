@@ -1,5 +1,5 @@
-//env
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { sign_text } from '../../data/Content';
 import { connect } from 'react-redux';
@@ -7,8 +7,8 @@ import { getLangFromCookie } from '../../action/user';
 
 class SignIn extends Component {
   state = {
-    email: '',
-    pwd: ''
+    email: 'test@yahoo.com',
+    pwd: 'test123'
   }
   inputRef = React.createRef()
   setEmail = (e) => this.setState({ email: e.target.value })
@@ -89,6 +89,10 @@ class SignIn extends Component {
                   value={pwd}
                   onChange={this.setPwd} />
               </div>
+            </div>
+            {/* 測試文字 */}
+            <div className='test-text'> {sign_text['test'][lang]}</div>
+            <div className='sign-group'> 
               <div className='sign-block'>
                 <div
                   className='sign-btn native'
@@ -96,7 +100,7 @@ class SignIn extends Component {
                   {sign_text['signIn'][lang]}
                 </div>
               </div>
-            </div>
+            </div> 
             <div className='or-text'>
               {sign_text['or'][lang]}
             </div>
@@ -118,10 +122,16 @@ class SignIn extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
   return {
     lang: state.user.lang
   }
 }
+
+SignIn.propTypes = {
+  lang: PropTypes.number,
+  history: PropTypes.object,
+  dispatch: PropTypes.func,
+}
+
 export default connect(mapStateToProps)(SignIn)

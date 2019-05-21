@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AmountInput from './element/AmountInput';
 import ExchangeAgainButton from './element/ExchangeAgainButton';
 
@@ -41,6 +42,19 @@ class getExchangeBoard extends Component {
     </div>
     )
   }
+}
+
+getExchangeBoard.propTypes = {
+  lang: PropTypes.number,
+  rateResultShowing: PropTypes.bool,
+  inputAmount: PropTypes.string,
+  outputAmount: PropTypes.string,
+  inputCurrencyText: PropTypes.string,
+  outputCurrencyText: PropTypes.string,
+  exchangeAgainText: PropTypes.string,
+  changeInputAmount: PropTypes.func,
+  changeOutputAmount: PropTypes.func,
+  getExchangeingAgain: PropTypes.func
 }
 
 export default getExchangeBoard;

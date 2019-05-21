@@ -6,7 +6,7 @@ $text: #5f6368;
 $primary-text: #202124;
 //#777c83
 $side-text: lighten($text,10);
-$background: #E6E6E6;
+$background: #ededed;
 $shadow: rgba(0,0,0,0.08);
 $placeholder: #d8d8d8;
 $main: #308CFE;
@@ -75,6 +75,7 @@ $lightgroup1second: lighten(#A059FF,10);
 $warm: linear-gradient(120deg,#ff3aa3,#ff8b59);
 $cold: linear-gradient(120deg,#26deff,#26abff);
 $basic-gradient: linear-gradient(120deg,#308CFE,#A059FF);
+$background-gradient: linear-gradient(120deg,#ff8b59,#ff3aa3,#a059ff ,#26abff);
 //漸層a
 $main-a: #147dff;
 $main-a-d: darken(#147dff,10);
@@ -114,15 +115,12 @@ body {
     background-color: white;
   }
 }
-@media screen and(max-width: 767px) {
+@media screen and(max-width: 959px) {
   body {
     background-color: $white;
-    &.gray {
-      background-color: $background;
-    }
   }
 }
-@media screen and(min-width: 768px) {
+@media screen and(min-width: 960px) {
   body {
     background-color: $background;
     &.white {

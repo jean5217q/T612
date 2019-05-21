@@ -1,45 +1,28 @@
 //ICON
-.add-act-icon.main {
+.add-plan-icon>.icon.main {
   border-radius: 50%;
   cursor: pointer;
   //交通
   &.trans {
     background-color: $trans;
-    &:after {
-      background-image: url('../images/cata_main/cata_trans.svg');
-    }
-    &:hover {
-      background-color: $light-trans
-    }    
+    &:after { background-image: url('../images/cata_main/cata_trans.svg'); }
+    &:hover { background-color: $light-trans }    
   }
   //景點
-  &.activity {
-    background-color: $spot;
-    &:after {
-      background-image: url('../images/cata_main/cata_activity.svg');
-    }
-    &:hover {
-      background-color: $light-spot
-    }    
+  &.activity { background-color: $spot;
+    &:after { background-image: url('../images/cata_main/cata_activity.svg'); }
+    &:hover { background-color: $light-spot }    
   }
   //飲食
   &.food {
     background-color: $food;
-    &:after {
-      background-image: url('../images/cata_main/cata_food.svg');
-    }
-    &:hover {
-      background-color: $light-food
-    }    
+    &:after { background-image: url('../images/cata_main/cata_food.svg'); }
+    &:hover { background-color: $light-food }    
   }
   //住宿
   &.hotel {
     background-color: $stay;
-    &:after {
-      background-image: url('../images/cata_main/cata_hotel.svg');
-    }
-    &:hover {
-      background-color: $light-stay
-    }    
+    &:after { background-image: url('../images/cata_main/cata_hotel.svg'); }
+    &:hover { background-color: $light-stay }    
   }
 }

@@ -84,6 +84,8 @@ class MaterialUIPickers extends React.Component {
 
 MaterialUIPickers.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+  date: PropTypes.object,
+  setDate: PropTypes.func 
+}
 
 export default withStyles(styles)(MaterialUIPickers);

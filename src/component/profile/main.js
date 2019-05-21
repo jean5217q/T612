@@ -1,5 +1,5 @@
-//env
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Account from './page/account/Account';
@@ -41,7 +41,6 @@ class Profile extends Component {
             lang={lang}
             color={color} />
           <Route
-            exact
             exact path={path}
             render={() =>
               <Redirect to={`${path}/account`} />} />
@@ -77,7 +76,6 @@ class Profile extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
   return {
     allProject: state.itinerary.allProject,
@@ -85,4 +83,13 @@ const mapStateToProps = (state) => {
     lang: state.user.lang
   }
 }
+
+Profile.propTypes = {
+  lang: PropTypes.number,
+  allProject: PropTypes.array,
+  user: PropTypes.object,
+  dispatch: PropTypes.func,
+  match: PropTypes.object,
+}
+
 export default connect(mapStateToProps)(Profile)

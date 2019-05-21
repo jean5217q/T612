@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import DayList from './List/DayList';
@@ -20,9 +21,12 @@ class Budget_page extends Component {
   getSelectCurrency = () => {
     const { basic, user } = this.props
     const { country } = basic
+    console.log(country)
     let curList = []
     //找出旅行地的對應貨幣
-    curList = country.map(el => country_coins[el])
+    country.forEach(el=>{
+      if(!curList.includes(country_coins[el])) curList.push(country_coins[el])
+    })
     //旅行地不含使用者預設的貨幣=>加入
     if (!curList.includes(user.currency)) curList.push(user.currency)
     //無美金加入美金
@@ -51,7 +55,7 @@ class Budget_page extends Component {
     } = this.props
     const path = `/edit/budget`
     return (
-      <div className='edit-main-wrap'>
+      <div className='main-wrap'>
         <Route
           exact path={`${path}/all`}
           render={() => 
@@ -111,4 +115,19 @@ const mapStateToProps = (state) => {
     loading: state.budget.itemLoading
   }
 }
+
+Budget_page.propTypes = {
+  lang: PropTypes.number,
+  color: PropTypes.string,
+  user: PropTypes.object,
+  projectId: PropTypes.string,
+  dateId: PropTypes.string,
+  basic: PropTypes.object,
+  idList: PropTypes.array,
+  loading: PropTypes.bool,
+  dispatch: PropTypes.func, 
+  getTimeList: PropTypes.func,
+  findSameDay: PropTypes.func
+}
+
 export default connect(mapStateToProps)(Budget_page);

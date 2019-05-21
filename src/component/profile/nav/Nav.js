@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import Nav_Bar from './component/Nav_Bar';
 import NavMenu_sm from '../../shareComponent/NavMenu_sm';
@@ -33,6 +34,11 @@ class Nav extends Component {
       </div>
     )
   }
+}
+
+Nav.propTypes = {
+  color: PropTypes.string, 
+  lang: PropTypes.number, 
 }
 
 export default withRouter(Nav)

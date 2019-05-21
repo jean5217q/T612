@@ -4,12 +4,15 @@ import { NavLink } from 'react-router-dom';
 class Add_Btn extends Component {
   render() {
     return (
-      <NavLink
-        to='/create'
-        className='add-list-btn'>
-        <div className='add-list-btn-icon'></div>
-      </NavLink>
+      <div className='add-btn-wrap'>
+        <NavLink
+          to='/create'
+          className='add-btn'>
+          <div className='icon'></div>
+        </NavLink>
+      </div>
     )
   }
 }
+
 export default Add_Btn;

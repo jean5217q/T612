@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Account_Top from './component/Account_Top';
 import Account_Bottom from './component/Account_Bottom';
 import PhotoUpdate_Pop from './component/PhotoUpdate_Pop';
 import SettingSuccess_Pop from './component/SettingSuccess_Pop';
-
 import { asyncGetUserDetail } from '../../../../action/user';
 import { account_text as text } from '../../../../data/Content';
-
 import { db } from '../../../base';
 const imgUrl = require('../../../../images/essential/camera.svg');
 
@@ -103,16 +102,16 @@ class Account_page extends Component {
       color,
       topBar } = this.props
     return (
-      <div className='edit-main-wrap'>
-        <div className='edit-list-wrap'>
-          <div className={`list-top project color-${color}`}>
-            <div className='list-top-inner'>
+      <div className='main-wrap'>
+        <div className='board'>
+          <div className={`board-top project color-${color}`}>
+            <div className='board-top-inner'>
               <div className={`top-title lang-${lang}`}>
                 {topBar['account_set'][lang]}
               </div>
             </div>
           </div>
-          <div className='list-bottom account'>
+          <div className='board-bottom account'>
             <Account_Top
               uid={uid}
               user={user}
@@ -145,4 +144,14 @@ class Account_page extends Component {
     )
   }
 }
+
+Account_page.propTypes = {
+  lang: PropTypes.number,
+  uid: PropTypes.string,
+  user: PropTypes.object,
+  color: PropTypes.string,
+  topBar: PropTypes.object,
+  dispatch: PropTypes.func
+}
+
 export default connect()(Account_page)

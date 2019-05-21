@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class EmptyBoard extends Component {
   render() {
-    const { empty,emp } = this.props 
+    const { empty, emp, lang } = this.props 
+    console.log(emp)
     return (
       <div
         style={!empty ? { display: 'none' } : { display: 'flex' }}
@@ -14,6 +16,12 @@ class EmptyBoard extends Component {
       </div>
     )
   }
+}
+
+EmptyBoard.propTypes = {
+  lang: PropTypes.number,
+  empty: PropTypes.bool,
+  emp: PropTypes.object
 }
 
 export default EmptyBoard;

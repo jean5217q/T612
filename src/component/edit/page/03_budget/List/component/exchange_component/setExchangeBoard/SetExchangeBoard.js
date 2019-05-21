@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AmountInput from './element/AmountInput';
 import DropMenu from './element/DropMenu';
 import ExchangeButton from './element/ExchangeButton';
@@ -57,6 +58,26 @@ class SetExchangeBoard extends Component {
     </div>
     )
   }
+}
+
+SetExchangeBoard.propTypes = {
+  lang: PropTypes.number,
+  rateResultShowing: PropTypes.bool,
+  inputCurrency: PropTypes.string,
+  outputCurrency: PropTypes.string,
+  amount: PropTypes.number,
+  inputDropMenuShowing: PropTypes.bool,
+  outputDropMenuShowing: PropTypes.bool,
+  inputText: PropTypes.string,
+  outputText: PropTypes.string,
+  amountText: PropTypes.string,
+  submitText: PropTypes.string,
+  setAmount: PropTypes.func,
+  setInputCurrency: PropTypes.func,
+  setOutputCurrency: PropTypes.func,
+  toggleInputCurrency: PropTypes.func,
+  toggleOutputCurrency: PropTypes.func,
+  submitForExchanging: PropTypes.func,
 }
 
 export default SetExchangeBoard;

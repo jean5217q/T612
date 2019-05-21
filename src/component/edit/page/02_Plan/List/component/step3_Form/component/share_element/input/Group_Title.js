@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Group_Title extends Component {
   render() {
@@ -10,6 +11,10 @@ class Group_Title extends Component {
       </div>
     )
   }
+}
+
+Group_Title.propTypes = {
+  title: PropTypes.string
 }
 
 export default Group_Title

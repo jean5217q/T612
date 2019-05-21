@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Item_Show extends Component {
   render() {
@@ -40,8 +41,8 @@ class Item_Show extends Component {
             <div className='budget-show-item-title'>{title}</div>
           </div>
           <div className='budget-show-item-block price'>
-            <div className='budget-show-item-value'>{currency}.{formateAmount(value)}</div>
-            <div className='budget-show-item-change-val'>{user_currency}.{formateAmount(change_val)}</div>
+            <div className='budget-show-item-value'>{currency} {formateAmount(value)}</div>
+            <div className='budget-show-item-change-val'>{user_currency} {formateAmount(change_val)}</div>
           </div>
           <div
             className='budget-show-item-block edit'
@@ -66,6 +67,24 @@ class Item_Show extends Component {
       </div>
     )
   }
+}
+
+Item_Show.propTypes = {
+  lang: PropTypes.number,
+  item: PropTypes.object,
+  type: PropTypes.string,
+  index: PropTypes.number,
+  deleteItem: PropTypes.func,
+  toggleEditSlide: PropTypes.func,
+  showEditBoard: PropTypes.func,
+  isMoving: PropTypes.bool,
+  mouseDown: PropTypes.func,
+  mouseUp: PropTypes.func,
+  mobileTouchDown: PropTypes.func,
+  mobileTouchMove: PropTypes.func,
+  mobileTouchUp: PropTypes.func,
+  formateAmount: PropTypes.func,
+  user_currency: PropTypes.string
 }
 
 export default Item_Show;

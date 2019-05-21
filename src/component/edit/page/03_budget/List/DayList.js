@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TopBar from './component/TopBar';
 import ListBoard from './component/ListBoard';
@@ -75,7 +76,7 @@ class DayList extends Component {
     if (list && idList.length > 0) {
       const { time } = list
       return (
-        <div className='edit-list-wrap'>
+        <div className='board'>
           <TopBar
             lang={lang}
             color={color}
@@ -116,6 +117,19 @@ const mapStateToProps = (state) => {
   return {
     list: state.budget.budgetDayList
   }
+}
+
+DayList.propTypes = {
+  lang: PropTypes.number,
+  color: PropTypes.string,
+  list: PropTypes.object,
+  idList: PropTypes.array,
+  user_currency: PropTypes.string,
+  text: PropTypes.object,
+  loading: PropTypes.bool,
+  dispatch: PropTypes.func,
+  formateAmount: PropTypes.func,
+  getSelectCurrency: PropTypes.func
 }
 
 export default connect(mapStateToProps)(DayList);

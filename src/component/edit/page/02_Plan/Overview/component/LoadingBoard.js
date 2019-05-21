@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class LoadingBoard extends Component {
   render() {
@@ -6,13 +7,17 @@ class LoadingBoard extends Component {
     return (
       < div
         style={loading ? { display: 'flex' } : { display: 'none' }}
-        className='budget-project-item add'>
+        className='daily-card add'>
         <div className='sm-loader-wrap'>
           <div className='sm-loader'></div>
         </div>
       </div>
     )
   }
+}
+
+LoadingBoard.propTypes = {
+  loading: PropTypes.bool,
 }
 
 export default LoadingBoard;

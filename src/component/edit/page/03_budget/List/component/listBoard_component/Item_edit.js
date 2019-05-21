@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Item_Edit extends Component {
@@ -35,9 +36,9 @@ class Item_Edit extends Component {
   }
   editSubmit = (e) => {
     e.preventDefault()
-    if (value === '' || title === '') return
     const { index, updateItem, closeEditBoard, type } = this.props
     const { value, title, select_currency } = this.state
+    if (value === '' || title === '') return
     const obj = {
       title: title,
       value: parseInt(value),
@@ -129,5 +130,20 @@ class Item_Edit extends Component {
     )
   }
 }
+
+Item_Edit.propTypes = {
+  lang: PropTypes.number,
+  text: PropTypes.object,
+  item: PropTypes.object,
+  type: PropTypes.string,
+  user_currency: PropTypes.string,
+  editBoardShowing: PropTypes.bool,
+  closeEditBoard: PropTypes.func,
+  currencyList: PropTypes.array,
+  index: PropTypes.number,
+  updateItem: PropTypes.func,
+  closeEditBoard: PropTypes.func,
+}
+
 
 export default connect()(Item_Edit);

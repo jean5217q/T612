@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Country_Board_lg extends Component {
   render() {
@@ -70,7 +71,7 @@ class Country_Board_lg extends Component {
                       lang == 1 &&
                       <div className='sm-flag'>
                         <div 
-                          style={{ backgroundImage: 'url(' + require(`../../../images/country/${country}.svg`) + ')' }}
+                          style={{ backgroundImage: 'url(' + require(`../../../images/country/${country}.png`) + ')' }}
                           className='sm-flag-icon'>
                         </div>
                       </div>
@@ -86,4 +87,23 @@ class Country_Board_lg extends Component {
     )
   }
 }
+
+Country_Board_lg.propTypes = {
+  stateList: PropTypes.array,
+  areaList: PropTypes.array,
+  countryList: PropTypes.array,
+  selected_state: PropTypes.string,
+  selected_area: PropTypes.string,
+  formateCountry: PropTypes.object,
+  formateArea: PropTypes.object,
+  formateState: PropTypes.object,
+  getSelectedState: PropTypes.func,
+  getSelectedArea: PropTypes.func,
+  addToCountryList: PropTypes.func,
+  stateTitle: PropTypes.string,
+  areaTitle: PropTypes.string,
+  countryTitle: PropTypes.string,
+  lang: PropTypes.number
+}
+
 export default Country_Board_lg

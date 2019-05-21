@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { select_text as text } from '../../../data/Content';
 
@@ -76,6 +77,12 @@ class LinkItem extends Component {
       </NavLink>
     )
   }
+}
+
+LinkItem.propTypes = {
+  lang: PropTypes.number,
+  path: PropTypes.string,
+  cata: PropTypes.string
 }
 
 export default LinkItem;

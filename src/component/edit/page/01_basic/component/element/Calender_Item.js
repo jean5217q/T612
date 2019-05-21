@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { week } from '../../../../../../data/Content';
 
 class Calender_Item extends Component {
@@ -18,6 +19,11 @@ class Calender_Item extends Component {
       </div>
     )
   }
+}
+
+Calender_Item.propTypes = {
+  lang: PropTypes.number,
+  day: PropTypes.object,
 }
 
 export default Calender_Item

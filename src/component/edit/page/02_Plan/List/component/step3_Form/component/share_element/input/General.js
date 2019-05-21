@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class General extends Component {
   render() {
@@ -20,6 +21,14 @@ class General extends Component {
       </div>
     )
   }
+}
+
+General.propTypes = {
+  lang: PropTypes.number,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  setInput: PropTypes.func,
 }
 
 export default General

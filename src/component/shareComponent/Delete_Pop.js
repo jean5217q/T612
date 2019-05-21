@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { btn } from '../../data/Content';
 
-class Popup extends Component {
+class Delete_Pop extends Component {
   render() {
-    const { closeDeletePopBoard, deleteProject, delete_pop, title,lang } = this.props
+    const { 
+      lang,
+      delete_pop, 
+      title,
+      closeDeletePopBoard, 
+      deleteProject 
+    } = this.props
     return (
       <div
         className='pop-up-container'
@@ -38,4 +45,12 @@ class Popup extends Component {
   }
 }
 
-export default Popup;
+Delete_Pop.propTypes = {
+  lang: PropTypes.number,
+  delete_pop: PropTypes.bool, 
+  title: PropTypes.string,
+  closeDeletePopBoard: PropTypes.func,
+  deleteProject: PropTypes.func
+}
+
+export default Delete_Pop;

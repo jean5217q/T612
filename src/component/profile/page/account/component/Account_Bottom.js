@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-class User_setting extends Component {
+import PropTypes from 'prop-types';
+
+class Account_Button extends Component {
   state = {
     currencyDropDown: false,
     modify_pop: false,
@@ -20,9 +22,10 @@ class User_setting extends Component {
     }
   }
   submitUser = (e) => {
+    e.preventDefault()
     const {color, currency, userName } = this.state
     if (!userName) return
-    e.preventDefault()
+    console.log('dd')
     const { updateUser } = this.props
     updateUser(color, currency, userName)
 
@@ -113,5 +116,12 @@ class User_setting extends Component {
   }
 }
 
+Account_Button.propTypes = {
+  lang: PropTypes.number,
+  user: PropTypes.object,
+  text: PropTypes.object,
+  dispatch: PropTypes.func,
+  updateUser: PropTypes.func
+}
 
-export default User_setting;
+export default Account_Button;

@@ -1,5 +1,5 @@
-//env
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 class NavMenu_sm extends Component {
@@ -27,6 +27,10 @@ class NavMenu_sm extends Component {
       </div>
     )
   }
+}
+
+NavMenu_sm.propTypes = {
+  toggleNavBar: PropTypes.func
 }
 
 export default NavMenu_sm;

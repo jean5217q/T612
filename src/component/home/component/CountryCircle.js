@@ -69,11 +69,13 @@ class CountryCircle extends Component {
   render(){
     const { circleText, opacity } = this.state
     return(
+      <div className='random-circle-wrap'>
       <div 
         className="decor-circle1-wrap"
         style={{opacity: opacity}}>
         <div className="decor-circle1"></div>
         <div className="decor-text1">{circleText}</div>
+      </div>
       </div>
     )
   }

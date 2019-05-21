@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Country_Title_Wrap from './element/Country_Title_Wrap';
 import Country_Item from './element/Country_Item';
 
@@ -28,6 +29,13 @@ class Country_Block extends Component {
       </div>
     )
   }
+}
+
+Country_Block.propTypes = {
+  lang: PropTypes.number,
+  countryList: PropTypes.array, 
+  showCountryBlock: PropTypes.func,
+  user: PropTypes.object,
 }
 
 export default Country_Block

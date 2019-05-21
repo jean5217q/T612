@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Time_Text extends Component {
   render() {
@@ -9,6 +10,10 @@ class Time_Text extends Component {
       </div>
     )
   }
+}
+
+Time_Text.propTypes = {
+  time: PropTypes.string,
 }
 
 export default Time_Text

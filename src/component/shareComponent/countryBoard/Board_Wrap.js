@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Country_Board_lg from './Country_Board_lg';
 import Country_Board_sm from './Country_Board_sm';
 import * as nation from '../../../data/country';
@@ -103,6 +104,9 @@ class Board_Wrap extends Component {
   }
 }
 
-
+Board_Wrap.propTypes = {
+  lang: PropTypes.number,
+  addToCountryList: PropTypes.func
+}
 
 export default Board_Wrap;

@@ -1,0 +1,64 @@
+header {
+  width: 100%;
+  max-width: 1600px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header-inner {
+  @include flexy($ais: center);
+}
+
+.logo {
+  background-size: 100%,100%;
+  background-image: url('../images/essential/main_logo.svg');
+  margin-right: auto;
+  transform: translateY(3px);
+}
+
+.lang-btn-wrap {
+  @include flexy($ais: center,$just: center);
+  border: 1px solid $white;
+  border-radius: 4px;
+  color: $white;
+  cursor: pointer;
+  overflow: hidden;
+  .lang-btn {
+    &.active {
+      background-color: $white;
+      color: $main;
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .header-inner {
+    padding-top: 24px;
+    padding-bottom: 20vh;
+  }
+  .logo {
+    @include size(90px,27px);
+  }
+  .lang-btn-wrap {
+    .lang-btn {
+      font-size: 12px;
+      padding: 3px 5px;
+    }
+    
+  }
+}
+
+@media screen and(min-width: 768px) {
+  .header-inner {
+    padding-top: 40px;
+    padding-bottom: 20vh;
+  }
+  .logo {
+    @include size(120px,36px);
+  }
+  .lang-btn-wrap {
+    .lang-btn {
+      font-size: 13px;
+      padding: 4px 6px;
+    }
+  }
+}

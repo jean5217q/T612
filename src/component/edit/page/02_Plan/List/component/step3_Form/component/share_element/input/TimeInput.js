@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TimeSelector from '../time/TimeSelector';
 
 class TimeInput extends Component {
@@ -19,6 +20,12 @@ class TimeInput extends Component {
       </div>
     )
   }
+}
+
+TimeInput.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.object, 
+  setTime: PropTypes.func, 
 }
 
 export default TimeInput

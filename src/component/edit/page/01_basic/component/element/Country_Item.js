@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { basic_text as text } from '../../../../../../data/Content';
 import { formateCurrency } from '../../../../../../data/currency';
 class Country_Item extends Component {
@@ -18,7 +19,7 @@ class Country_Item extends Component {
         })
       })
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getRate()
   }
   render() {
@@ -32,7 +33,7 @@ class Country_Item extends Component {
           <div className='country-intro-flag-wrap'>
             <div
               className="country-intro-flag"
-              style={{ backgroundImage: 'url(' + require(`../../../../../../images/country/${countryInfo.id}.svg`) + ')' }}>
+              style={{ backgroundImage: 'url(' + require(`../../../../../../images/country/${countryInfo.id}.png`) + ')' }}>
             </div>
           </div>
           <div className="country-intro-title">{countryInfo.country[lang]}</div>
@@ -89,7 +90,7 @@ class Country_Item extends Component {
             </div>
           </div>
           {/* 匯率 */}
-          <div className="country-intro-detail">
+          <div className="country-intro-detail rate">
             <div className='detail-top'>
               <div className='basic-sm-icon exchange'></div>
               <div
@@ -100,10 +101,10 @@ class Country_Item extends Component {
             <div className='detail-bottom'>
               <div className={`country-intro-value rate lang-${lang}`}>
                 <span className="place1">
-                  1{formateCurrency[user.currency][lang]}
+                  1{formateCurrency[user.currency][0]}
                 </span>
                 <span className="equal-span">=</span>
-                <span className="place2">{this.state.rate}{countryInfo.currency[lang]}</span>
+                <span className="place2">{this.state.rate}{countryInfo.currency[0]}</span>
                 <span className="change-rate"></span>
               </div>
             </div>
@@ -112,6 +113,13 @@ class Country_Item extends Component {
       </div>
     )
   }
+}
+
+Country_Item.propTypes = {
+  lang: PropTypes.number,
+  user: PropTypes.object,
+  countryInfo: PropTypes.object,
+  style: PropTypes.object
 }
 
 export default Country_Item

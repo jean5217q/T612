@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Board_Wrap from '../../../../shareComponent/countryBoard/Board_Wrap';
 import Board_Submit from './Board_Submit';
 class Board_Controller extends Component {
@@ -37,6 +38,13 @@ class Board_Controller extends Component {
   }
 }
 
-
+Board_Controller.propTypes = {
+  lang: PropTypes.number,
+  selected_countryList: PropTypes.array,
+  addToCountryList: PropTypes.func,
+  removeFromCountryList: PropTypes.func,
+  updateCountryList: PropTypes.func,
+  hideCountryBlock: PropTypes.func
+}
 
 export default Board_Controller;

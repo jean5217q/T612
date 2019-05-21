@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Item_Bottom from './item_bottom/Item_bottom';
 import Item_Top from './item_top/Item_Top';
 
@@ -7,6 +8,7 @@ class List_Item extends Component {
     subItemShowing: false
   }
   toggleSubItem = (id) => {
+    console.log(id)
     const origin = window.scrollTop
     const target = document.getElementById(`item-top-${id}`)
     const position = target.getBoundingClientRect()
@@ -58,6 +60,17 @@ class List_Item extends Component {
       </li>
     )
   }
+}
+
+List_Item.propTypes = {
+  lang: PropTypes.number,
+  projectId: PropTypes.string,
+  dateId: PropTypes.string,
+  item: PropTypes.object,
+  id: PropTypes.string,
+  route: PropTypes.object,
+  deleteItem: PropTypes.func,
+  getEditData: PropTypes.func,
 }
 
 export default List_Item;

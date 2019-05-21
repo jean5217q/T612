@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { formateCurrency } from '../../../../../../../data/currency';
 import SetExchangeBoard from './setExchangeBoard/SetExchangeBoard';
 import GetExchangeBoard from './getExchangeBoard/GetExchangeBoard';
@@ -160,6 +161,13 @@ class ExchangeBoard extends Component {
       </div>
     )
   }
+}
+
+ExchangeBoard.propTypes = {
+  lang: PropTypes.number,
+  exchangeBoardShowing: PropTypes.bool,
+  exchangeBoardOpacity: PropTypes.bool,
+  text: PropTypes.object
 }
 
 export default ExchangeBoard;

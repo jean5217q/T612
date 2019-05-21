@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import MapItem from './component/MapItem';
 import { plan_form as text  } from '../../../../../../../data/Content'
 
@@ -93,7 +94,15 @@ class Step4 extends Component {
     })
   }
   render() {
-    const { mapList, deleteMapList, addItemToDb, backToStep4, isEditing, updateItemToDb,lang } = this.props
+    const { 
+      mapList, 
+      deleteMapList, 
+      addItemToDb, 
+      backToStep4, 
+      isEditing, 
+      updateItemToDb,
+      lang 
+    } = this.props
     const action = isEditing ? updateItemToDb : addItemToDb
     return (
       <div className='add-map-container'>
@@ -143,6 +152,17 @@ class Step4 extends Component {
       </div>
     )
   }
+}
+
+Step4.propTypes = {
+  lang: PropTypes.number,
+  mapList: PropTypes.array, 
+  deleteMapList: PropTypes.func, 
+  addItemToDb: PropTypes.func,
+  backToStep4: PropTypes.func,
+  addMapList: PropTypes.func,
+  isEditing: PropTypes.bool,
+  updateItemToDb: PropTypes.func,
 }
 
 export default Step4;

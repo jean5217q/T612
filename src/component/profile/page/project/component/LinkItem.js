@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { setDateToNumber } from '../../../../base';
 
@@ -34,30 +35,36 @@ class Link extends Component {
           className={`project-item-circle ${circleMouse?'show':null}`}>
         </div>
         <div
-          className='plan-delete profile'
+          className='daily-card-delete profile'
           onClick={() => openDeletePopBlock(id, item.title)}>
-          <div className='plan-delete-icon'></div>
+          <div className='icon'></div>
         </div>
         <NavLink
-          className='plan-content profile'
+          className='daily-card-content profile'
           to={{ pathname: '/edit/basic', search: `?project=${id}` }}>
           <div className='plan-country-wrap'>
             {
-              country.map((country, index) =>
+              country.slice(0,4).map((country, index) =>
                 <div
                   key={index}
                   className='country-flag'
-                  style={{ backgroundImage: 'url(' + require(`../../../../../images/country/${country}.svg`) + ')' }}>
+                  style={{ backgroundImage: 'url(' + require(`../../../../../images/country/${country}.png`) + ')' }}>
                 </div>
               )
             }
           </div>
-          <div className='plan-main-text profile'>{item.title}</div>
-          <div className='plan-sub-text profile'>{time.y}.{time.m}</div>
+          <div className='main profile'>{item.title}</div>
+          <div className='sub profile'>{time.y}.{time.m}</div>
         </NavLink>
       </div>
     )
   }
+}
+
+Link.propTypes = {
+  item: PropTypes.object,
+  id: PropTypes.string,
+  openDeletePopBlock: PropTypes.func
 }
 
 export default Link;

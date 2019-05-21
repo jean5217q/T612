@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { plan_form as text  } from '../../../../../../../../data/Content';
 
 class BottomBoard extends Component {
@@ -11,25 +12,31 @@ class BottomBoard extends Component {
     const { lang, mainType, goToStep4 } = this.props
     const list = this.state[mainType]
     return (
-      <div className='add-act-bottom-wrap sub_cata'>
+      <div className='add-plan-bottom sub_cata'>
+        <div className='add-plan-bottom-inner'>
         {
           list.map((el, index) =>
             <div
-              className='add-act-icon-wrap'
+              className='add-plan-icon'
               key={index}>
               <div
-                className={`add-act-icon sub ${el}`}
+                className={`icon sub ${el}`}
                 onClick={() => goToStep4(el)}>
               </div>
-              <div className='add-act-sub-icon-text'>
-                {text['content'][el][lang]}
-              </div>
+              <div className='title'>{text['content'][el][lang]}</div>
             </div>
           )
         }
+        </div>
       </div>
     )
   }
+}
+
+BottomBoard.propTypes = {
+  lang: PropTypes.number,
+  mainType: PropTypes.string,
+  goToStep4: PropTypes.func
 }
 
 export default BottomBoard

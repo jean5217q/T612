@@ -26,7 +26,7 @@ export default function User(state = user, action) {
     }
     case UserTypes.GET_COOKIE: {
       let lang = state.lang
-      if (getCookie()) lang = getCookie()
+      if (getCookie()) lang = parseInt(getCookie())
       return { ...state, lang }
     }
     default:

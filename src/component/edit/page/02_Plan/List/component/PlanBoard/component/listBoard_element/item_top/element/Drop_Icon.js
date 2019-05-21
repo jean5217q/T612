@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Drop_Icon extends Component {
   render() {
@@ -11,6 +12,11 @@ class Drop_Icon extends Component {
       </div>
     )
   }
+}
+
+Drop_Icon.propTypes = {
+  id: PropTypes.string,
+  toggleSubItem: PropTypes.func
 }
 
 export default Drop_Icon;

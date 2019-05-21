@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Type from '../share_element/input/Type';
 import General from '../share_element/input/General';
 import TimeInput from '../share_element/input/TimeInput';
@@ -102,6 +103,15 @@ class Hotel extends Component {
 
     )
   }
+}
+
+Hotel.propTypes = {
+  time: PropTypes.object,
+  basic: PropTypes.object,
+  dbTime: PropTypes.number,
+  setBasicInput: PropTypes.func,
+  goToStep5: PropTypes.func,
+  lang: PropTypes.number,
 }
 
 export default Hotel

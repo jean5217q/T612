@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 class MapItem extends Component {
   render() {
@@ -12,6 +13,11 @@ class MapItem extends Component {
       </li>
     )
   }
+}
+
+MapItem.propTypes = {
+  name: PropTypes.string,
+  deleteMapList: PropTypes.func,
 }
 
 export default MapItem;

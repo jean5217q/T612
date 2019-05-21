@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SettingSuccess_Pop extends Component {
   render() {
     const { 
-      success_pop,
       lang,
+      success_pop,
       text,
       closeSuccessPupBlock } = this.props
     return (
@@ -31,4 +32,12 @@ class SettingSuccess_Pop extends Component {
     )
   }
 }
+
+SettingSuccess_Pop.propTypes = {
+  lang: PropTypes.number,
+  text: PropTypes.object, 
+  success_pop: PropTypes.bool,
+  closeSuccessPupBlock: PropTypes.func
+}
+
 export default SettingSuccess_Pop;

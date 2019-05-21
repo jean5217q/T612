@@ -199,7 +199,7 @@ export const btn = {
   next: ['NEXT', '下一步'],
   create: [
     'CREATE',
-    `創${space}${space}${space}建`],
+    `建立旅行計劃`],
   confirm: ['Confirm', `確${space}認`],
   delete: ['Delete', '刪除'],
   date: ['Date', '日期'],
@@ -232,6 +232,7 @@ export const sign_text = {
   signIn: ['Sign In', '登入'],
   signUp: ['Sign Up', '註冊'],
   password: ['Password', '密碼'],
+  test: ['You can use email above to try this app','您可以使用測試帳號使用此應用程式'],
   or: ['or', '或'],
   signIn_google: ['Sign In with Google', '透過Google登入'],
   signUp_google: ['Sign Up with Google', '透過Google註冊'],

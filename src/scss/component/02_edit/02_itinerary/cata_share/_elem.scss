@@ -1,23 +1,38 @@
-//上方WRAP
-.add-act-top-wrap {
+//上方BOARD
+.add-plan-top {
+  width: 100%;
   position: relative;
-  @include size(100%,48px);
   @include flexy($ais: center,$just: center);
   background-color: $group1first;
 }
+@media screen and (min-width: 960px) { .add-plan-top { height: 56px;} }
+@media screen and (max-width: 959px) { .add-plan-top { height: 48px;} }
 
 //返回紐
-.back-icon {
+.add-plan-top>.back {
+  @include absolute($t: 0,$l: 12px,$z: 1);
+  @include size(40px,100%);
   cursor: pointer;
-  @include absolute($t: 20px,$l: 20px,$z: 1);
-  @include size(20px,20px);
   @include after {
+    @include absolute($t: 50%,$l: 50%);
+    @include size(20px,7px);
     border-left: 2px solid $white;
     border-bottom: 2px solid $white;
-    @include size(20px,7px);
-    transform: skewX(-30deg);
+    transform: translate(-50%,-50%) skewX(-30deg);
   }
 }
+@media screen and(min-width: 960px) {
+  .add-plan-top>.back {
+    &:after { transition: $ease; }
+    &:hover { @include after { width: 15px; } }
+  }
+}
+
+//標題
+.add-plan-top>.title { color: $white; letter-spacing: 1px;} 
+@media screen and(max-width: 959px) { .add-plan-top>.title { font-size: 14px; } }
+@media screen and(min-width: 960px) { .add-plan-top>.title { font-size: 16px; } }
+
 //關閉扭
 .add-act-close-btn {
   @include absolute($t: 50%,$r: 20px,$z: 1);
@@ -26,75 +41,51 @@
   background-image: url('../images/essential/remove_white_icon.svg');
   cursor: pointer;
 }
-//lg-返回紐
-@media screen and(min-width: 768px) {
-  .back-icon {
-    &:after {
-      transition: 0.1s ease-out;
-    }
-    &:hover {
-      @include after {
-        transform: translateX(3px) skewX(-30deg);
-        width: 15px;
-      }
-    }
-  }
-}
-//標題
-.add-act-title {color: $white;}
 
-@media screen and(max-width: 767px) {
-  .add-act-title {font-size: 14px;}
-}
-@media screen and(min-width: 768px) {
-  .add-act-title {font-size: 15px;}
-}
 
-//下方WRAP
-.add-act-bottom-wrap {
+//下方BOARD
+.add-plan-bottom {
   width: 100%;
   @include flexy($ais: center,$just: center); 
 }
-
-@media screen and (max-width: 767px) {
-  .add-act-bottom-wrap {
-    @include fixed($t: 50%,$l: 50%);
-    transform: translate(-50%,calc(-50% - 24px));
-  }
+.add-plan-bottom-inner {
+  @include flexy($ais: center,$just: center); 
 }
-
-
-//單個按鈕WRAP
-.add-act-icon-wrap {
-  @include flexy($dir: column,$ais: center);
-}
-@media screen and(max-width: 767px) {
-  .add-act-bottom-wrap {
+@media screen and(max-width: 959px) {
+  .add-plan-bottom { height: 100%; }
+  .add-plan-bottom-inner {
     flex-wrap: wrap;
-    max-width: 300px;
-  }
-  .add-act-icon-wrap {
     width: 50%;
-    padding: 16px 0;
+    max-width: 300px;
+    min-width: 240px;
   }
 }
-@media screen and(min-width: 768px) {
-  .add-act-bottom-wrap {
-    height: 220px;
+@media screen and (min-width: 960px) { .add-plan-bottom { height: 220px; } }
+
+
+//單個按鈕
+.add-plan-icon { 
+  @include flexy($dir: column,$ais: center);
+  color: $side-text;
+}
+@media screen and(max-width: 959px) {
+  .add-plan-icon {
+    width: 50%;
+    padding: 12px 0;
   }
-  .add-act-icon-wrap {
-    margin-right: 16px;
-    margin-left: 16px;
-    transition: 0.2s ease-out;
-    color: $side-text;
-    &:hover {
-      transform: translateY(4px);
-    }
+  .add-plan-icon>.title { font-size: 14px;}
+}
+@media screen and(min-width: 960px) {
+  .add-plan-icon {
+    margin: 0 16px;
+    transition: $ease2;
+    &:hover { transform: translateY(4px); }
   }
+  .add-plan-icon>.title { font-size: 16px;}
 }
 
 //ICON
-.add-act-icon {
+.add-plan-icon>.icon {
   position: relative;
   @include after {
     @include size(70%,70%);
@@ -102,19 +93,15 @@
     transform: translate(-50%,-50%); 
   }
 }
-//sm-ICON
 @media screen and(max-width: 575px) {
-  .add-act-icon {
+  .add-plan-icon>.icon {
     @include size(72px,72px);
-    margin-bottom: 10px;
-    box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+    margin-bottom: 8px;
   }
 }
-//lg-ICON
 @media screen and(min-width: 576px) {
-  .add-act-icon {
+  .add-plan-icon>.icon {
     @include size(80px,80px);
-    margin-bottom: 12px;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
   }
 }

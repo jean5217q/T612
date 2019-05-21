@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Title_Block from './component/Title_Block';
 import Date_Block from './component/Date_Block';
@@ -99,17 +100,17 @@ class Basic extends Component {
       const startDay = dayList[0].item.time.seconds
       const endDay = dayList[dayList.length - 1].item.time.seconds
       return (
-        <div className='edit-main-wrap'>
-          <div className='edit-list-wrap basic'>
-            <div className={`list-top color-${color}`}>
-              <div className='list-top-inner'>
+        <div className='main-wrap'>
+          <div className='board basic'>
+            <div className={`board-top color-${color}`}>
+              <div className='board-top-inner'>
                 <div className={`top-title lang-${lang}`}>
                   {topBar['basic'][lang]}
                 </div>
                 <div className="top-block"></div>
               </div>
             </div>
-            <div className='list-bottom basic'>
+            <div className='board-bottom basic'>
               <Title_Block
                 title={title}
                 projectId={projectId}
@@ -156,6 +157,16 @@ const mapStateToProps = (state) => {
     basic: state.itinerary.projectBasic,
     dayList: state.itinerary.projectDayIdList,
   }
+}
+
+Basic.propTypes = {
+  projectId: PropTypes.string, 
+  basic: PropTypes.object, 
+  user: PropTypes.object, 
+  lang: PropTypes.number,
+  dayList: PropTypes.array,
+  color: PropTypes.string,
+  dispatch: PropTypes.func
 }
 
 export default connect(mapStateToProps)(Basic);

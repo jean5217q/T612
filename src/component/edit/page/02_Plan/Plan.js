@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Overview from './Overview/Overview'
@@ -20,7 +21,7 @@ class Itinerary extends Component {
     const { projectId, dateId } = getQueryId()
     const path = '/edit/itinerary'
     return (
-      <div className='edit-main-wrap'>
+      <div className='main-wrap'>
         <Route 
           exact path={`${path}`} 
           render={() => <Redirect to={`${path}/overview`} />} 
@@ -36,7 +37,6 @@ class Itinerary extends Component {
               lang={lang}
               dateId={dateId}
               projectId={projectId}
-              p_route={this.props.p_route}
               getTimeList={getTimeList}
               findSameDay={findSameDay}
               findMaxTime={findMaxTime}
@@ -72,10 +72,16 @@ const mapStateToProps = (state) => {
   }
 }
 
-
-
+Itinerary.propTypes = {
+  lang: PropTypes.number,
+  list: PropTypes.array,
+  basic: PropTypes.object,
+  color: PropTypes.string,
+  loading: PropTypes.bool,
+  getTimeList: PropTypes.func,
+  findSameDay: PropTypes.func,
+  findMaxTime: PropTypes.func,
+  findMinTime: PropTypes.func,
+}
 
 export default connect(mapStateToProps)(Itinerary)
-
-
-

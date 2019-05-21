@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Sub_Item extends Component {
   render() {
@@ -10,6 +11,11 @@ class Sub_Item extends Component {
       </div>
     )
   }
+}
+
+Sub_Item.propTypes = {
+  title: PropTypes.string, 
+  value: PropTypes.string, 
 }
 
 export default Sub_Item

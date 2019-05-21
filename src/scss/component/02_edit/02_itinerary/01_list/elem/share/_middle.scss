@@ -38,7 +38,8 @@
   color: $main;
   position: relative;
   padding-left: 12px;
-  margin-bottom: 8px;
+  flex-shrink: 0;
+  
   @include before{
     @include size(5px,5px);
     background-color: $main;
@@ -59,13 +60,18 @@
   .i-middle-list-item {
     font-size: 13px;
     margin-bottom: 8px;
+    align-items: flex-start;
     &:last-child { margin-bottom: 0;}
   }
   .i-middle-list-title {
     margin-bottom: 0;
+    line-height: 1.2;
   }
   .i-item-map-drop {
     @include size(20px,16px);
+  }
+  .i-middle-list-content {
+    line-height: 1.2;
   }
   .i-item-bottom-map {
     @include size(100%,200px);
@@ -81,7 +87,10 @@
   .i-middle-list-item {
     font-size: 15px;
     padding: 6px 0;
-    // margin-bottom: 14px;
+    
+  }
+  .i-middle-list-title {
+    margin-bottom: 4px;
   }
   .i-item-map-drop {
     @include size(22px,18px);
@@ -94,6 +103,7 @@
 @media screen and(max-width: 767px) {
   .i-middle-block.list  {
   @include flexy($dir: column);
+  padding-right: 0;
   }
   .i-middle-list-item {
     width: 100%;

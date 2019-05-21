@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Title_Text from './Title_Text';
 
 class Country_Title extends Component {
@@ -17,6 +18,11 @@ class Country_Title extends Component {
     </div>
     )
   }
+}
+
+Country_Title.propTypes = {
+  lang: PropTypes.number,
+  showCountryBlock: PropTypes.func,
 }
 
 export default Country_Title

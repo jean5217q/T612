@@ -74,7 +74,7 @@
 
 @media screen and (min-width: 960px) {
   .edit-country_board {
-    width: calc(100% - 200px);
-    @include fixed($t: 0,$l: 200px);
+    width: calc(100% - 180px);
+    @include fixed($t: 0,$l: 180px);
   }
 }

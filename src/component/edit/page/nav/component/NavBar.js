@@ -1,14 +1,12 @@
-//env
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
 import Plan_NavLink from './Plan_NavLink';
 import Lang_Btn from '../../../../shareComponent/Lang_Btn';
 import { getLangFromCookie } from '../../../../../action/user';
 import { nav } from '../../../../../data/Content';
-
 
 class NavBar extends Component {
   state = {
@@ -61,11 +59,11 @@ class NavBar extends Component {
     } = this.state
 
     let {
-      isOpening,
-      projectId,
-      list,
-      color,
       lang,
+      color,
+      projectId,
+      isOpening,
+      list,
       closeNavBar
     } = this.props
 
@@ -130,9 +128,9 @@ class NavBar extends Component {
           </ul>
           {/* budget */}
           <li
-            className='nav-item'
+            className='nav-item budget'
             onClick={this.toggleBudget}>
-            <div className={`nav-link nav-link-${lang}`}>
+            <div className={`nav-link nav-link-${lang}`} id='test-budget-btn'>
               {nav['budget'][lang]}
             </div>
             <i
@@ -169,6 +167,14 @@ class NavBar extends Component {
   }
 }
 
-
+NavBar.propTypes = {
+  lang: PropTypes.number, 
+  color: PropTypes.string,
+  projectId: PropTypes.string,
+  isOpening: PropTypes.bool,
+  list: PropTypes.array,
+  closeNavBar: PropTypes.func,
+  dispatch: PropTypes.func
+}
 
 export default withRouter(connect()(NavBar))

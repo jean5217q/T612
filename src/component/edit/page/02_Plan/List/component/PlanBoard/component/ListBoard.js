@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import List_Item from './listBoard_element/List_Item';
 import { asyncGetDatePlanList } from '../../../../../../../../action/itinerary';
@@ -26,7 +27,7 @@ class ListBoard extends Component {
       getEditData } = this.props
     if (planList.length > 0) {
       return (
-        <div className='list-bottom'>
+        <div className='board-bottom'>
           <div className="i-item-wrap plan">
             {
               planList.map((el, index) =>
@@ -56,7 +57,7 @@ class ListBoard extends Component {
     }
     else {
       return (
-        <div className='list-bottom'>
+        <div className='board-bottom'>
           {
             loading
               ? <div className='sm-loader-wrap'>
@@ -75,5 +76,18 @@ class ListBoard extends Component {
   }
 }
 
+
+ListBoard.propTypes = {
+  showAddDayBoard: PropTypes.func,
+  lang: PropTypes.number,
+  index: PropTypes.number,
+  planList: PropTypes.array ,
+  loading: PropTypes.bool,
+  projectId: PropTypes.string,
+  dateId: PropTypes.string,
+  route: PropTypes.object,
+  getEditData: PropTypes.func,
+  dispatch: PropTypes.func
+}
 
 export default connect()(ListBoard);

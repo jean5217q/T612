@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { basic_text } from '../../../../../../data/Content';
 
 class Title_Text extends Component {
@@ -26,6 +27,11 @@ class Title_Text extends Component {
       )
     }
   }
+}
+
+Title_Text.propTypes = {
+  lang: PropTypes.number,
+  cata: PropTypes.string,
 }
 
 export default Title_Text

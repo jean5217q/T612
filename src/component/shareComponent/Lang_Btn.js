@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 class Lang_Btn extends Component {
   render() {
     const { lang, changeLanguage } = this.props
@@ -17,6 +19,11 @@ class Lang_Btn extends Component {
       </div>
     )
   }
+}
+
+Lang_Btn.propTypes = {
+  lang: PropTypes.number,
+  changeLanguage: PropTypes.func
 }
 
 export default Lang_Btn;

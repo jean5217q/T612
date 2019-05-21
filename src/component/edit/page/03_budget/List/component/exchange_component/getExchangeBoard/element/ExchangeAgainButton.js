@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ExchangeAgainButton extends Component {
   render() {
@@ -15,6 +16,11 @@ class ExchangeAgainButton extends Component {
       </div>
     )
   }
+}
+
+ExchangeAgainButton.propTypes = {
+  exchangeAgainText: PropTypes.string,
+  getExchangeingAgain: PropTypes.func,
 }
 
 export default ExchangeAgainButton;

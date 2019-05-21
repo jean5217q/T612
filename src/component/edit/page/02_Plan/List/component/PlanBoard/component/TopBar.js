@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MenuBoard from './topBar_element/MenuBoard';
 import DateBoard from './topBar_element/DateBoard';
@@ -8,7 +9,7 @@ import { asyncGetDateBasic, asyncGetProjectDayID
 import { week, plan } from '../../../../../../../../data/Content';
 import { Country } from '../../../../../../../../data/country';
 import { setDateToNumber,formateStartDate, db } from '../../../../../../../base';
-class Panel_Top extends Component {
+class TopBar extends Component {
   state = {
     date: null,
     location: this.props.topBasic.country,
@@ -41,7 +42,7 @@ class Panel_Top extends Component {
   }
   updateDate = (e) => {
     e.preventDefault()
-    const {list, getTimeList, findSameDay } = this.props
+    const { list, getTimeList, findSameDay } = this.props
     let { date } = this.state
     date = formateStartDate(date)
     if (findSameDay(getTimeList(list), date)) return
@@ -71,8 +72,8 @@ class Panel_Top extends Component {
     const { time, country } = topBasic
     const formate = setDateToNumber(time.seconds)
     return (
-      <div className={`list-top color-${color}`}>
-        <div className="list-top-inner">
+      <div className={`board-top color-${color}`}>
+        <div className="board-top-inner">
           <div className={`top-title lang-${lang}`}>
             {Country[country] ? Country[country][lang] : country}
           </div>
@@ -93,7 +94,7 @@ class Panel_Top extends Component {
           </div>
         </div>
         {/* 編輯 */}
-        <div className={`edit-list-top ${setBoard&&'show'}`}>          
+        <div className={`edit-board-top ${setBoard&&'show'}`}>          
           <MenuBoard
             menuBoard={menuBoard}
             locationTitle= {plan['change_l'][lang]}
@@ -121,4 +122,17 @@ class Panel_Top extends Component {
   }
 }
 
-export default connect()(Panel_Top);
+TopBar.propTypes = {
+  showAddDayBoard: PropTypes.func,
+  color: PropTypes.string, 
+  topBasic: PropTypes.object, 
+  lang: PropTypes.number,
+  list: PropTypes.array, 
+  getTimeList: PropTypes.func, 
+  findSameDay: PropTypes.func,
+  projectId: PropTypes.string, 
+  dateId: PropTypes.string, 
+  dispatch: PropTypes.func, 
+}
+
+export default connect()(TopBar);

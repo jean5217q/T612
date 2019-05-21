@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import NavBar from './component/NavBar';
 import MainMenu_Btn from './component/MainMenu_Btn';
@@ -13,7 +14,14 @@ class Nav extends Component {
   toggleNavBar = () => this.setState({ isOpening: !this.state['isOpening'] })
   closeNavBar = () => this.setState({ isOpening: false })
   render() {
-    const { dateId, projectId, list, basic, color, lang } = this.props
+    const { 
+      lang,
+      color,
+      dateId, 
+      projectId, 
+      list, 
+      basic
+     } = this.props
     const { project, isOpening } = this.state
     return (
       <div className='nav-wrap'>
@@ -44,6 +52,15 @@ class Nav extends Component {
       </div>
     )
   }
+}
+
+Nav.propTypes = {
+  lang: PropTypes.number,
+  color: PropTypes.string,
+  dateId: PropTypes.string, 
+  projectId: PropTypes.string, 
+  list: PropTypes.array, 
+  basic: PropTypes.object
 }
 
 export default withRouter(Nav)

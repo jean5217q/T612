@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddForm extends Component {
   render() {
@@ -137,8 +138,6 @@ class AddForm extends Component {
               }
             </ul>
           </div> */}
-
-
           <button className='add-budget-button' type='submit'>{text['submit'][lang]}</button>
         </div>
         {/* 取消 */}
@@ -150,4 +149,30 @@ class AddForm extends Component {
     )
   }
 }
+
+AddForm.propTypes = {
+  lang: PropTypes.number,
+  text: PropTypes.object,
+  currencyList: PropTypes.array,
+  currencyDropShowing: PropTypes.bool,
+  select_currency: PropTypes.string,
+  value: PropTypes.string,
+  title: PropTypes.string,
+  select_type: PropTypes.string,
+  typeDropShowing: PropTypes.bool,
+  AddBoardShowing: PropTypes.bool,
+  type: PropTypes.array,
+  typeDropStyling: PropTypes.bool,
+  currencyDropStyling: PropTypes.bool,
+  hideAddBoard: PropTypes.func,
+  setCostTitle: PropTypes.func,
+  setCostValue: PropTypes.func,
+  setCostType: PropTypes.func,
+  addItemToDb: PropTypes.func,
+  showTypeDrop: PropTypes.func,
+  showCurrencyDrop: PropTypes.func,
+  setCostCurrency: PropTypes.func,
+  closeAllDrop: PropTypes.func
+}
+
 export default AddForm

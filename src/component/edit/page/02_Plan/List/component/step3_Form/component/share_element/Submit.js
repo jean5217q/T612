@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { plan_form as text } from '../../../../../../../../../data/Content';
 
 class Submit extends Component {
@@ -21,6 +22,13 @@ class Submit extends Component {
       </div>
     )
   }
+}
+
+Submit.propTypes = {
+  lang: PropTypes.number,
+  bundleInput: PropTypes.func, 
+  setBasicInput: PropTypes.func, 
+  goToStep5: PropTypes.func, 
 }
 
 export default Submit

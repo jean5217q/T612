@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class PhotoUpdate_Pop extends Component {
   render() {
     const {
-      preImg,
-      updating,
       lang,
       text,
+      preImg,
+      updating,
       photo_pop,
       closeUpdatePhotoBlock,
       setPreImg,
@@ -61,4 +62,16 @@ class PhotoUpdate_Pop extends Component {
     )
   }
 }
+
+PhotoUpdate_Pop.propTypes = {
+  lang: PropTypes.number,
+  text: PropTypes.object, 
+  preImg: PropTypes.string,
+  updating: PropTypes.bool,
+  photo_pop: PropTypes.bool,
+  closeUpdatePhotoBlock: PropTypes.func,
+  setPreImg: PropTypes.func,
+  updateUserPhoto: PropTypes.func
+}
+
 export default PhotoUpdate_Pop

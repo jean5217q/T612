@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { asyncGetProjectBasic } from '../../../../../action/itinerary';
 import { db } from '../../../../base';
 
@@ -16,10 +18,11 @@ class Title_Block extends Component {
   updateTitle = () => {
     const { projectId, dispatch } = this.props
     const { title } = this.state
+    if(title==='') return
     this.setState({ editing: false, originTitle: title })
-    db.collection('project').doc(projectId).update({ title })
+    db.collection('project').doc(projectId).update({ title: title })
       .then(() => dispatch(asyncGetProjectBasic(projectId)))
-      .catch(err => alert('Error'))
+      .catch(err => console.log(err))
   }
   render() {
     const { title,editing } = this.state
@@ -62,4 +65,10 @@ class Title_Block extends Component {
   }
 }
 
-export default Title_Block;
+Title_Block.propTypes = {
+  title: PropTypes.string,
+  projectId: PropTypes.string,
+  dispatch: PropTypes.func,
+}
+
+export default connect()(Title_Block);

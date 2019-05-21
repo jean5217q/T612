@@ -6,7 +6,7 @@ import Link from './elem/Link';
 import Date_Time from '../../../../shareComponent/Time';
 import { asyncGetAllProjectBudget } from '../../../../../action/budget';
 import Circle_Loading from '../../../../loading/Circle_Loading';
-import Propup_Delete from '../../../../shareComponent/Delete_Pop';
+import Delete_Pop from '../../../../shareComponent/Delete_Pop';
 import { itemLoading } from '../../../../../action/budget';
 import { topBar, empty, btn } from '../../../../../data/Content';
 import { db } from '../../../../base';
@@ -14,7 +14,7 @@ class Overview extends Component {
   state = {
     date: new Date(),
     addPanel: false,
-    popup: false,
+    delete_pop: false,
     deleteId: null,
     title: null,
     empty: true
@@ -29,9 +29,9 @@ class Overview extends Component {
     this.setState({ addPanel: true, date: nextDay, empty: false })
   }
   hideAddPanel = () => { this.setState({ addPanel: false, empty: true }) }
-  openPopUp = (id, title) => { this.setState({ popup: true, deleteId: id, title: title }) }
+  openPopUp = (id, title) => this.setState({ delete_pop: true, deleteId: id, title: title })
   closeDeletePopBoard = () => {
-    this.setState({ popup: false, deleteId: null, title: null })
+    this.setState({ delete_pop: false, deleteId: null, title: null })
   }
   addNewDate = () => {
     const { projectId, idList, findSameDay, getTimeList, dispatch } = this.props
@@ -73,7 +73,7 @@ class Overview extends Component {
     const { 
       date, 
       addPanel, 
-      popup, 
+      delete_pop, 
       title 
     } = this.state
 
@@ -89,38 +89,34 @@ class Overview extends Component {
       let list = idList.slice(0)
       let prepared = list.splice(0, 1)
       return (
-        <div className='edit-list-wrap'>
-          <div className={`list-top color-${color}`}>
-            <div className='list-top-inner'>
+        <div className='board'>
+          <div className={`board-top color-${color}`}>
+            <div className='board-top-inner'>
               <div className={`top-title lang-${lang}`}>
                 {topBar['b_overview'][lang]}
               </div>
-              <div className="top-block">
-              </div>
             </div>
           </div>
-          <div className='list-bottom budget_overview'>
-            <div className='budget-overview-inner'>
-              <div className='budget-project-wrap'>
+          <div className='board-bottom overview'>
                 {/* 預設 */}
-                <div className='budget-project-block prepare'>
+                <div className='overview-board prepare'>
                   <NavLink
-                    className='budget-project-item prepare'
+                    className='daily-card prepare'
                     to={{
                       pathname: `/edit/budget/all/list/prior`,
                       search: `?project=${projectId}&date=${prepared[0].id}`
                     }}>
-                    <div className='plan-content'>
-                      <div className='plan-main-text prepared'>{text['pre_trip'][lang]}</div>
+                    <div className='daily-card-content'>
+                      <div className='main prepared'>{text['pre_trip'][lang]}</div>
                       <div
                         style={lang == '0' ? { display: 'block' } : { display: 'none' }}
-                        className='plan-sub-text'>{text['cost'][lang]}</div>
+                        className='sub'>{text['cost'][lang]}</div>
                     </div>
                   </NavLink>
                 </div>
-                <div className='budget-project-block date'>
+                <div className='overview-board date'>
                   {list.length > 0
-                    ?
+                    &&
                     list.map((el, index) =>
                       <Link
                         key={index}
@@ -133,12 +129,10 @@ class Overview extends Component {
                         lang={lang}
                       />
                     )
-                    :
-                    null
                   }
                   < div
                     style={loading ? { display: 'flex' } : { display: 'none' }}
-                    className='budget-project-item add'>
+                    className='daily-card add'>
                     <div className='sm-loader-wrap'>
                       <div className='sm-loader'></div>
                     </div>
@@ -146,35 +140,36 @@ class Overview extends Component {
                   {/* 新增模板 */}
                   <div
                     style={addPanel ? { display: 'flex' } : { display: 'none' }}
-                    className='budget-project-item add'>
-                    <div className='plan-content'>
+                    className='daily-card add'>
+                    <div className='daily-card-content'>
                       <Date_Time
                         date={date}
                         setDate={this.setDate} />
-                      <div className='budget-add-list-btn-wrap'>
+                      <div className='daily-board-btn'>
                         <div
-                          className='budget-project-add-list-btn add'
+                          className='btn add'
                           onClick={this.addNewDate}>{btn['add2'][lang]}</div>
                         <div
                           onClick={this.hideAddPanel}
-                          className='budget-project-add-list-btn'>{btn['cancel'][lang]}</div>
+                          className='btn cancel'>{btn['cancel'][lang]}</div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                onClick={this.showAddPanel}
-                className='add-list-btn'>
-                <div className='add-list-btn-icon'></div>
-              </div>
-              < Propup_Delete
-                popup={popup}
+             
+              < Delete_Pop
+                delete_pop={delete_pop}
                 closeDeletePopBoard={this.closeDeletePopBoard}
                 title={title}
                 deleteProject={this.deleteDay}
                 lang={lang}
               />
+          </div>
+          <div className='add-btn-wrap'>  
+            <div
+              onClick={this.showAddPanel}
+              className='add-btn'>
+              <div className='icon'></div>
             </div>
           </div>
         </div >
@@ -188,6 +183,16 @@ class Overview extends Component {
   }
 }
 
-
+Overview.propTypes = {
+  lang: PropTypes.number,
+  color: PropTypes.string,
+  projectId: PropTypes.string,
+  idList: PropTypes.array,
+  text: PropTypes.object,
+  loading: PropTypes.bool,
+  dispatch: PropTypes.func, 
+  getTimeList: PropTypes.func,
+  findSameDay: PropTypes.func,
+}
 
 export default connect()(Overview);

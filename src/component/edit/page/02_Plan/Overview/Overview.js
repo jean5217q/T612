@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DayLink from './component/DayLink';
 import AddDayLink from './component/AddDayLink';
@@ -74,7 +75,7 @@ class Overview extends Component {
     }
   }
   removeDay = () => {
-    const { projectId,dispatch } = this.props
+    const { projectId, dispatch } = this.props
     const { deleteId } = this.state
     db.collection('project').doc(projectId)
       .collection('itinerary').doc(deleteId).delete()
@@ -100,18 +101,16 @@ class Overview extends Component {
       loading } = this.props
     if (list && basic) {
       return (
-        <div className='edit-list-wrap'>
-          <div className={`list-top color-${color}`}>
-            <div className='list-top-inner'>
+        <div className='board'>
+          <div className={`board-top color-${color}`}>
+            <div className='board-top-inner'>
               <div className={`top-title lang-${lang}`}>
                 {topBar['p_overView'][lang]}
               </div>
             </div>
           </div>
-          <div className='list-bottom budget_overview'>
-            <div className='budget-overview-inner'>
-              <div className='budget-project-wrap'>
-                <div className='budget-project-block'>
+          <div className='board-bottom overview'>
+                <div className='overview-board'>
                   {list.length > 0
                     ?
                     list.map((el, index) =>
@@ -127,7 +126,8 @@ class Overview extends Component {
                       />
                     )
                     :
-                    <EmptyBoard 
+                    <EmptyBoard
+                      lang={lang} 
                       empty={empty}
                       emp={emp}/>
                   }
@@ -144,8 +144,7 @@ class Overview extends Component {
                 </div>
               </div>
               <AddDayBtn showAddDayBoard={this.showAddDayBoard}/>
-            </div>
-          </div>
+          
           < Delete_Pop
             delete_pop={delete_pop}
             closeDeletePopBoard={this.closeDeletePopBoard}
@@ -162,7 +161,19 @@ class Overview extends Component {
   }
 }
 
-
-
+Overview.propTypes = {
+  lang: PropTypes.number,
+  color: PropTypes.string,
+  projectId: PropTypes.string,
+  list: PropTypes.array,
+  basic: PropTypes.object,
+  loading: PropTypes.bool,
+  projectId: PropTypes.string,
+  getTimeList: PropTypes.func,
+  findSameDay: PropTypes.func,
+  findMaxTime: PropTypes.func,
+  findMinTime: PropTypes.func,
+  dispatch: PropTypes.func,
+}
 
 export default connect()(Overview);

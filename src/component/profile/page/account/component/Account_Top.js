@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+const userImg = require('../../../../../images/essential/user_photo.svg');
 
-class User_info extends Component {
+class Account_Top extends Component {
   logOut = () => {
     firebase.auth().signOut()
     .then(() => window.location.href = '/')
@@ -8,7 +10,7 @@ class User_info extends Component {
   }
   render() {
     const { 
-      openPopUp, 
+      openUpdatePhotoBlock, 
       user,
       text,
       lang } = this.props
@@ -19,13 +21,14 @@ class User_info extends Component {
             <div className='user-photo-container'>
               <div
                 className='user-photo'
-                style={user.img ? { backgroundImage: `url('${user.img}')` } : null}>
+                style={user.img ? { backgroundImage: `url('${user.img}')` } : { backgroundImage: `url('${userImg}')`}}
+                >
               </div>
               <div
                 className='user-photo-edit-btn'
-                onClick={openPopUp}>
+                onClick={openUpdatePhotoBlock}>
                 <div className='user-photo-edit-icon'
-                  onClick={openPopUp}>
+                  onClick={openUpdatePhotoBlock}>
                 </div>
               </div>
             </div>
@@ -44,4 +47,12 @@ class User_info extends Component {
     )
   }
 }
-export default User_info
+
+Account_Top.propTypes = {
+  lang: PropTypes.number,
+  user: PropTypes.object,
+  text: PropTypes.object,
+  openUpdatePhotoBlock: PropTypes.func, 
+}
+
+export default Account_Top

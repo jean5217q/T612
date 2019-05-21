@@ -1,0 +1,115 @@
+.heading-wrap {
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  .heading-title {
+    font-size: 1em;
+    &.lang-0 {
+      letter-spacing: 0.1em; 
+    }
+    &.lang-1 {
+      letter-spacing: 0.2em;
+      font-weight: 300;
+    }
+  }
+  .heading-line-wrap {
+    @include flexy($ais: center);
+    margin: 0.5em 0;
+    opacity: 0.6;
+    .heading-line {
+      @include size(100%,1px);
+      background-color: white;
+      margin-right: 0.4em;
+      &.move { animation: move 0.8s}
+    }
+    .heading-line-icon {
+      font-size: 0.5em;
+    }
+  }
+  .heading-sub-title {
+    margin-bottom: 2em;
+    font-size: 0.6em;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+  }
+  .enter-btn-wrap {
+    position: relative;
+    @include size(calc(160px + 1.5vw),calc(40px + .5vw));
+    font-size: 0.4em;
+    letter-spacing: 0.2em;
+    font-weight: 300;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    &:hover {
+      transform: translate(1px,1px);
+    }
+    .enter-btn-text {
+      @include absolute($t: 50%,$l: 50%,$z: 1);
+      transform: translate(-50%,-50%);
+    }
+    @include before {
+      @include absolute($t: 0,$l: 0,$z: 0);
+      @include size(100%,100%);
+      background-image: $background-gradient;
+      background-size: 200% 200%;
+      animation: gradient-move 5s ease infinite;
+      box-shadow: 6px 6px 10px rgba(0,0,0,0.05);
+      transition: 0.2s ease-out;
+    }
+  }
+}
+
+.random-circle-wrap { @include flexy($just: flex-end); }
+.decor-circle1-wrap {
+  @include size(140px,140px);
+  @include flexy($ais: center,$just: center);
+  border-radius: 50%;
+  margin-top: 5vh;
+  margin-right: 5vw;
+  opacity: 1;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.08);
+  animation: updown 4s infinite alternate;
+  cursor: pointer;
+}
+.decor-circle1 {
+  border-radius: 50%;
+  @include size(100%,100%);
+  background-image: radial-gradient(rgba(255,255,255,0) 50%,white 80%);
+  mix-blend-mode: overlay;
+}
+.decor-text1 {
+  @include absolute($t: 50%,$l: 50%,$z: 1);
+  transform: translate(-50%,-50%);
+  color: white;
+  font-family: 'Caudex', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  
+}
+
+@media screen and (max-width: 960px) {
+  .decor-circle1-wrap { display: none; }
+}
+
+@media screen and (max-width: 959px ) {
+  .heading-wrap {
+    width: 85%;
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 576px ) {
+  .heading-wrap {
+    width: 100%;
+    font-size: 24px;
+  } 
+}
+
+@media screen and (min-width: 960px ) {
+  .heading-wrap { 
+    width: 50%;
+    font-size: 40px;
+  }
+}

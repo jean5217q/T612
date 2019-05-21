@@ -1,4 +1,9 @@
-.add-list-btn {
+.add-btn-wrap {
+  width: 100%;
+  @include flexy($just: flex-end);
+  margin-top: 18px;
+}
+.add-btn {
   @include center;
   @include size(60px,60px);
   border-radius: 50%;
@@ -6,17 +11,16 @@
   box-shadow: 0 5px 5px $shadow;
   cursor: pointer;
   z-index: 99;
-}
-.add-list-btn-icon {
-  @include size(40%,40%);
-  background-size: cover;
-  background-position: center center;
-  background-image: url('../images/essential/plus_white.svg');
+  .icon {
+    @include size(40%,40%);
+    background-size: 100%,100%;
+    background-position: center center;
+    background-image: url('../images/essential/plus_white.svg');
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .add-list-btn{
-    @include absolute($r: 8px,$b: -90px);
+  .add-btn{
     transition: 0.15s ease-in;
     &:hover {
       transform: translateY(5px);
@@ -24,16 +28,11 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .add-list-btn {
+@media screen and (max-width: 959px) {
+  .add-btn {
     @include size(48px,48px);
-    @include fixed($r: 48px,$b: 80px);
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .add-list-btn {
     @include fixed($r: 16px,$b: 60px);
   }
 }
+
 

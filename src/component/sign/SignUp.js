@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { sign_text } from '../../data/Content';
@@ -131,4 +132,11 @@ const mapStateToProps = (state) => {
     lang: state.user.lang
   }
 }
+
+SignUp.propTypes = {
+  lang: PropTypes.number,
+  history: PropTypes.object,
+  dispatch: PropTypes.func,
+}
+
 export default connect(mapStateToProps)(SignUp)

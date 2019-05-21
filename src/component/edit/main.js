@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
@@ -87,7 +88,7 @@ class MainWrap extends Component {
     if (list && user && basic) {
       const color = user.color
       return (
-        <main className='edit-page-wrap'>
+        <>
           <Nav
             lang={lang}
             color={color}
@@ -97,7 +98,6 @@ class MainWrap extends Component {
             basic={basic}
           />
           <Route
-            exact
             exact path={path}
             render={() => <Redirect to={`${path}/basic`} />} />
           <Route
@@ -140,7 +140,7 @@ class MainWrap extends Component {
                 findSameDay={this.findSameDay}
               />} 
           />
-        </main>
+        </>
       )
     }
     else return (<Background_Loading />)
@@ -154,6 +154,15 @@ const mapStateToProps = (state) => {
     user: state.user.user,
     lang: state.user.lang
   }
+}
+
+MainWrap.propTypes = {
+  list: PropTypes.array, 
+  basic: PropTypes.object, 
+  user: PropTypes.object, 
+  lang: PropTypes.number,
+  dispatch: PropTypes.func,
+  match: PropTypes.object
 }
 
 export default withRouter(connect(mapStateToProps)(MainWrap))

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { country_text as text } from '../../../data/Content';
 import { Country } from '../../../data/country'
 
@@ -32,9 +33,15 @@ class SelectedCountry_List extends Component {
           )
         }
       </ul>
-    </div>
-      
+    </div>  
     )
   }
 }
+
+SelectedCountry_List.propTypes = {
+  lang: PropTypes.number,
+  removeFromCountryList: PropTypes.func,
+  selected_countryList: PropTypes.array
+}
+
 export default SelectedCountry_List

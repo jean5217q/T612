@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, TimePicker, DatePicker } from 'material-ui-pickers';
+import { MuiPickersUtilsProvider, DatePicker } from 'material-ui-pickers';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const styles = {
@@ -72,7 +72,6 @@ class MaterialUIPickers extends React.Component {
               margin="normal"
               value={date}
               onChange={setDate}
-
               format='yyyy / MM / dd'
             />
           </MuiThemeProvider>
@@ -84,6 +83,8 @@ class MaterialUIPickers extends React.Component {
 
 MaterialUIPickers.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+  date: PropTypes.object,
+  setDate: PropTypes.func
+}
 
 export default withStyles(styles)(MaterialUIPickers);

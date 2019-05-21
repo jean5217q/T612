@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AmountInput extends Component {
   render() {
@@ -18,6 +19,13 @@ class AmountInput extends Component {
       </div>
     )
   }
+}
+
+AmountInput.propTypes = {
+  lang: PropTypes.number,
+  amount: PropTypes.string,
+  currencyText: PropTypes.string,
+  changeAmount: PropTypes.func,
 }
 
 export default AmountInput;

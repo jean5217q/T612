@@ -65,7 +65,6 @@ export const Country = {
   Philippines: ['Philippines', '菲律賓'],
   Singapore: ['Singapore', '新加坡'],
   Thailand: ['Thailand', '泰國'],
-  Timor_Leste: ['Timor Leste', '東帝汶'],
   Brunei: ['Brunei', '汶萊'],
   Vietnam: ['Vietnam', '越南'],
   //
@@ -109,7 +108,6 @@ export const Country = {
   Czech: ['Czech', '捷克'],
   Hungary: ['Hungary', '匈牙利'],
   Poland: ['Poland', '波蘭'],
-  Moldova: ['Moldova', '摩爾多瓦'],
   Romania: ['Romania', '羅馬尼亞'],
   Russian: ['Russian', '俄羅斯'],
   Slovakia: ['Slovakia', '斯洛伐克'],
@@ -204,27 +202,22 @@ export const Country = {
   Niger: ['Niger', '尼日'],
   Nigeria: ['Nigeria', '奈及利亞'],
   Sierra_Leone: ['Sierra Leone', '獅子山'],
-  Cote_d_Ivoire: ['Cote d Ivoire', '象牙海岸'],
   //
   Algeria: ['Algeria', '阿爾及利亞'],
   Egypt: ['Egypt', '埃及'],
   Libya: ['Libya', '利比亞'],
   Morocco: ['Morocco', '摩洛哥'],
-  Sudan: ['Sudan', '蘇丹'],
   Tunisia: ['Tunisia', '突尼西亞'],
-  Western_Sahara: ['Western Sahara', '西撒哈拉'],
   //
   Lesotho: ['Lesotho', '賴索托'],
   Namibia: ['Namibia', '納米比亞'],
   South_Africa: ['South Africa', '南非'],
-  Swaziland: ['Swaziland', '史瓦帝尼'],
+  Swaziland: ['Swaziland', '史瓦濟蘭'],
   //
   Angola: ['Angola', '安哥拉'],
   Cameroon: ['Cameroon', '喀麥隆'],
   Chad: ['Chad', '查德'],
   Congo: ['Congo', '剛果'],
-  Central_African: ['Central African', '中非'],
-  Equatorial_Guinea: ['Equatorial Guinea', '赤道幾內亞'],
   Gabon: ['Gabon', '加彭'],
   //
   Australia: ['Australia', '澳洲'],
@@ -252,20 +245,19 @@ export const Asia = {
     'Taiwan'
   ],
   Southeast_Asia: [
-    // 'Cambodia',
-    // 'Indonesia',
+    'Cambodia',
+    'Indonesia',
     'Lao',
-    // 'Malaysia',
+    'Malaysia',
     'Myanmar',
     'Philippines',
-    // 'Singapore',
-    // 'Thailand',
-    // 'Timor_Leste',
+    'Singapore',
+    'Thailand',
     'Brunei',
-    // 'Vietnam'
+    'Vietnam'
   ],
   Southern_Asia: [
-    // 'Sri_Lanka',
+    'Sri_Lanka',
     'Nepal',
     // 'Pakistan',
     // 'Maldives',
@@ -305,10 +297,10 @@ export const Asia = {
 }
 export const Europe = {
   Eastern_Europe: [
-    // 'Belarus',
-    // 'Bulgaria',
+    'Belarus',
+    'Bulgaria',
     // 'Czech',
-    // 'Hungary',
+    'Hungary',
     // 'Poland',
     // 'Moldova',
     // 'Romania',
@@ -339,7 +331,7 @@ export const Europe = {
     'England'
   ],
   Southern_Europe: [
-    // 'Albania',
+    'Albania',
     // 'Andorra',
     // 'Bosnia',
     // 'Croatia',
@@ -352,7 +344,7 @@ export const Europe = {
     // 'San_Marino',
     // 'Serbia',
     // 'Slovenia',
-    // 'Spain',
+    'Spain',
     // 'Macedonia'
   ],
 }
@@ -360,72 +352,71 @@ export const Europe = {
 
 export const Americas = {
   Northern_America: [
-    // 'United_States',
-    // 'Canada'
+    'United_States',
+    'Canada'
   ],
   Central_America: [
-    // 'Belize',
-    // 'Costa_Rica',
-    // 'Mexico',
-    // 'Nicaragua',
-    // 'Honduras',
-    // 'Guatemala',
-    // 'Salvador',
-    // 'Panama'
+    'Belize',
+    'Costa_Rica',
+    'Mexico',
+    'Nicaragua',
+    'Honduras',
+    'Guatemala',
+    'Salvador',
+    'Panama'
   ],
   South_America:
     [
-      // 'Brazil',
-      // 'Chile',
-      // 'Colombia',
-      // 'Ecuador',
-      // 'Guyana',
-      // 'Paraguay',
-      // 'Peru',
-      // 'Suriname',
-      // 'Uruguay',
-      // 'Venezuela'
+      'Brazil',
+      'Chile',
+      'Colombia',
+      'Ecuador',
+      'Guyana',
+      'Paraguay',
+      'Peru',
+      'Suriname',
+      'Uruguay',
+      'Venezuela'
     ],
   Caribbean:
     [
-      // 'Bahamas',
-      // 'Cuba',
-      // 'Grenada',
-      // 'Haiti',
-      // 'Jamaica',
-      // 'Puerto_Rico',
-      // 'Trinidad'
+      'Bahamas',
+      'Cuba',
+      'Grenada',
+      'Haiti',
+      'Jamaica',
+      'Puerto_Rico',
+      'Trinidad'
     ]
 }
 
 export const Africa = {
   Eastern_Africa:
     [
-      // 'Ethiopia',
-      // 'Kenya',
-      // 'Madagascar',
+      'Ethiopia',
+      'Kenya',
+      'Madagascar',
       // 'Malawi',
       // 'Mauritius',
-      // 'Mozambique',
-      // 'Rwanda',
-      // 'Somalia',
+      'Mozambique',
+      'Rwanda',
+      'Somalia',
       // 'South_Sudan',
       // 'Uganda',
-      // 'Tanzania',
-      // 'Zambia',
+      'Tanzania',
+      'Zambia',
       // 'Zimbabwe'
     ],
   Western_Africa:
     [
-      // 'Gambia',
-      // 'Ghana',
+      'Gambia',
+      'Ghana',
       // 'Guinea',
       // 'Liberia',
       // 'Mali',
-      // 'Niger',
+      'Niger',
       // 'Nigeria',
-      // 'Sierra_Leone',
-      // 'Cote_d_Ivoire'
+      'Sierra_Leone',
     ],
   Northern_Africa:
     [
@@ -433,16 +424,14 @@ export const Africa = {
       // 'Egypt',
       // 'Libya',
       // 'Morocco',
-      // 'Sudan',
-      // 'Tunisia',
-      // 'Western_Sahara'
+      'Tunisia',
     ],
 
   Southern_Africa:
     [
       // 'Lesotho',
-      // 'Namibia',
-      // 'South_Africa',
+      'Namibia',
+      'South_Africa',
       // 'Swaziland'
     ],
 
@@ -452,9 +441,7 @@ export const Africa = {
       // 'Cameroon',
       // 'Chad',
       // 'Congo',
-      // 'Central_African',
-      // 'Equatorial_Guinea',
-      // 'Gabon',
+      'Gabon',
     ],
 
 }

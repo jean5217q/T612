@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 class MenuBoard extends Component {
   render() {
@@ -26,6 +27,15 @@ class MenuBoard extends Component {
       </div>
     )
   }
+}
+
+MenuBoard.propTypes = {
+  showAddDayBoard: PropTypes.func,
+  menuBoard: PropTypes.bool,
+  locationTitle: PropTypes.string,
+  dateTilte: PropTypes.string,
+  showLocationBoard: PropTypes.func,
+  showDateBoard: PropTypes.func
 }
 
 export default MenuBoard;

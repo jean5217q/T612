@@ -65,6 +65,7 @@
   color:$side-text;
   border-right: 1px solid $border;
   @include flexy($dir: column,$ais: center);
+  &.rate { flex-shrink: 0};
 }
 
 .detail-top {width: 100%;color: $main;}
@@ -85,6 +86,7 @@
 //小標題值
 .country-intro-value {
   &.rate {
+    flex-shrink: 0;
     @include flexy($ais: center);
     .equal-span {padding: 0 8px;}
   }
@@ -110,7 +112,7 @@
 
 @media screen and (min-width: 768px) {
   .country-intro-detail {
-    width: 100%;
+    flex: 1;
     &:last-child {border-right: none;}
   }
   .detail-top {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Item_Show from './Item_show';
 import Item_Edit from './Item_edit';
 
@@ -90,6 +91,21 @@ class ListItem extends Component {
       </li>
     )
   }
+}
+
+ListItem.propTypes = {
+  lang: PropTypes.number,
+  text: PropTypes.object,
+  index: PropTypes.number,
+  item: PropTypes.object,
+  type: PropTypes.string,
+  projectId: PropTypes.string,
+  dateId: PropTypes.string,
+  user_currency: PropTypes.string,
+  currencyList: PropTypes.array,
+  deleteItem: PropTypes.func,
+  updateItem: PropTypes.func,
+  formateAmount: PropTypes.func,
 }
 
 export default ListItem;

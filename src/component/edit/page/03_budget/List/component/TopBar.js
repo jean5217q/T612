@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { setDateToNumber } from '../../../../../base';
 import { week, topBar } from '../../../../../../data/Content';
 
@@ -12,8 +13,8 @@ class TopBar extends Component {
     } = this.props
     const date = setDateToNumber(time.seconds)
     return (
-      <div className={`list-top color-${color}`}>
-        <div className="list-top-inner">
+      <div className={`board-top color-${color}`}>
+        <div className="board-top-inner">
           <div className="top-block budget">
             <div className="top-inner-block budget">
               {
@@ -40,5 +41,13 @@ class TopBar extends Component {
     )
   }
 }
+
+TopBar.propTypes = {
+  lang: PropTypes.number,
+  color: PropTypes.string,
+  time: PropTypes.object,
+  toggleExchangeBoard: PropTypes.func
+}
+
 
 export default TopBar;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Circle_Loading from '../../../../loading/Circle_Loading';
 import PlanBoard from './component/PlanBoard/PlanBoard';
@@ -60,7 +61,6 @@ class List extends Component {
     this.setState(prevState => ({ mapList: prevState.mapList.filter(el => el.name !== name) }))
   }
   setBasicInput = (obj) => {
-    console.log(obj)
     const { isEditing } = this.state
     this.setState({ basic: obj }, () => {
       isEditing ? this.updateItemToDb() : this.addItemToDb()
@@ -143,11 +143,36 @@ class List extends Component {
     this.props.dispatch(removeDayList())
   }
   render() {
-    const { step1, step2, step3, step4, step5, isEditing, projectId, dateId, mainType, subType, mapList, basic, time, nextTime } = this.state
-    const { list, color, getTimeList, findSameDay, findMaxTime, topBasic, planList, loading, lang } = this.props
+    const { 
+      step1, 
+      step2, 
+      step3, 
+      step4, 
+      step5, 
+      isEditing, 
+      projectId, 
+      dateId, 
+      mainType, 
+      subType, 
+      mapList, 
+      basic, 
+      time, 
+      nextTime 
+    } = this.state
+    const { 
+      list, 
+      color, 
+      getTimeList, 
+      findSameDay, 
+      findMaxTime, 
+      topBasic, 
+      planList, 
+      loading, 
+      lang 
+    } = this.props
     if (topBasic && planList && list) {
       return (
-        <div className='plan-container'>
+        <>
           {step1 &&
             <PlanBoard
               lang={lang}
@@ -167,19 +192,22 @@ class List extends Component {
           {step2 &&
             <Main
               lang={lang}
+              color={color}
               backToStep1={this.backToStep1}
               goToStep3={this.goToStep3}
             />}
           {step3&&
             <Sub
               lang={lang}
+              color={color}
               mainType={mainType}
               backToStep2={this.backToStep2}
               goToStep4={this.goToStep4}
             />}
           {step4&&
             <Form
-            lang={lang} 
+              lang={lang} 
+              color={color}
               basic={basic}
               dbTime={time}
               nextTime={nextTime}
@@ -204,7 +232,7 @@ class List extends Component {
               deleteMapList={this.deleteMapList}
               addItemToDb={this.addItemToDb}
             /> }
-        </div>
+        </>
       )
     }
     else return (<Circle_Loading />)
@@ -217,6 +245,19 @@ const mapStateToProps = (state) => {
   return {
     topBasic, planList
   }
+}
+
+List.propTypes = {
+  lang: PropTypes.number,
+  list: PropTypes.array, 
+  color: PropTypes.string, 
+  getTimeList: PropTypes.func, 
+  findSameDay: PropTypes.func, 
+  findMaxTime: PropTypes.func, 
+  topBasic: PropTypes.object, 
+  planList: PropTypes.array, 
+  loading: PropTypes.bool, 
+  dispatch: PropTypes.func
 }
 
 export default connect(mapStateToProps)(List);

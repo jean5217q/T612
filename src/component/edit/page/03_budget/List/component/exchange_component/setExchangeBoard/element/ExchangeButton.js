@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ExchangeButton extends Component {
   render() {
@@ -17,6 +18,11 @@ class ExchangeButton extends Component {
       </form>
     )
   }
+}
+
+ExchangeButton.propTypes = {
+  submitForExchanging: PropTypes.func,
+  submitText: PropTypes.string,
 }
 
 export default ExchangeButton;

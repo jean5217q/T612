@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Circle extends Component {
   render() {
@@ -15,6 +16,10 @@ class Circle extends Component {
       </div>
     )
   }
+}
+
+Circle.propTypes = {
+  direction: PropTypes.string,
 }
 
 export default Circle

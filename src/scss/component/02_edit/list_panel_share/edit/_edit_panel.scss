@@ -31,27 +31,23 @@
 
 
 //編輯
-.edit-list-top {
+.edit-board-top {
   width: 100%;
   @include flexy($ais: center,$just: center,);
   @include absolute($t: 64px,$l: 0,$z: 1000);
-  background-image: linear-gradient(120deg,$pink1,$pink3);
+  background-image: linear-gradient(120deg,#5bb7ff,#e7afff);
   height: 0;
   overflow: hidden;
   transition: 0.2s;
   &.show {
-    height: 240px;
+    height: 200px;
   }
 }
 @media screen and(min-width: 768px) {
-  .edit-list-top {
-    top: 64px;
-  }
+  .edit-board-top { top: 56px; }
 }
 @media screen and(max-width: 767px) {
-  .edit-list-top {
-    top: 48px;
-  }
+  .edit-board-top { top: 48px; }
 }
 .edit-top-inner {
   width: 100%;
@@ -89,7 +85,6 @@
 }
 
 .step1-btn {
-  font-weight: 300;
   width: 200px;
   padding: 20px 0;
   border: 1px solid $white;
@@ -112,8 +107,7 @@
     font-size: 18px;
     margin: 0 8px;
     &:hover { 
-      font-weight: 400;
-      color: $pink1;
+      color: #5bb7ff;
       &:after { width: 100%;}
     }
   }
@@ -141,7 +135,7 @@
 }
 .edit-top-block-edit-buttom {
   padding-top: 40px;
-  background-color: $trans;
+  background-color: #4297ff;
   color: $white;
   font-weight: 500;
   font-size: 14px;
@@ -185,8 +179,8 @@
   font-size: 0.9rem;
   font-weight: 400;
   padding: 0.7rem;
-  color: #ef2f65;
-  border: 1px solid #ef2f65;
+  color: #5bb7ff;
+  border: 1px solid #5bb7ff;
   background-color: $white;
   cursor: pointer;
   text-align: center;
@@ -198,13 +192,13 @@
   @include size(100%,300px);
   @include flexy($ais: center,$just: center,);
   @include absolute($l: 0,$z: 1000);
-  background-image: linear-gradient(120deg,$pink1,$pink3);
+  background-image: linear-gradient(120deg,#5bb7ff,#e7afff);
   opacity: 0;
   transition: $ease;
   &.show {opacity: 1;}
 }
 @media screen and(min-width: 768px) {
-  .exchange-wrap {top: 64px;}
+  .exchange-wrap {top: 56px;}
 }
 @media screen and(max-width: 767px) {
   .exchange-wrap {top: 48px;}
@@ -227,7 +221,7 @@
   @include flexy($ais: center,$just: center);
   margin-bottom: 12px;
   &:last-child {margin-bottom: 0;}
-  border: 1px solid #ef2f65;
+  border: 1px solid #4297ff;
     background-color: $white;
     border-radius: 5px;
   &.result {
@@ -242,7 +236,7 @@
   flex-shrink: 0;
   color: $white;
   padding: 0.8rem;
-    background-color: #ef2f65;
+    background-color: #4297ff;
     text-align: center;
     line-height: 1;
   &.result {
@@ -285,21 +279,21 @@
 .exchange-list {
   width: calc(100% + 2px);
   @include absolute($t: calc(2.1rem + 0.23rem ),$l: -1px,$z: 10);
-  border-right: 1px solid $pink1;
-  border-left: 1px solid $pink1;
+  border-right: 1px solid #4297ff;
+  border-left: 1px solid #4297ff;
   background-color: $white;
   height: 0;
   overflow-y: scroll;
   &.show {
     height: 21rem;
-    border-bottom: 1px solid $pink1;
+    border-bottom: 1px solid #4297ff;
   }
 }
 .exchange-list-item {
   font-size: 0.9rem;
   padding: 0.6rem;
   color: $side-text;
-  border-bottom: 1px solid $pink1;
+  border-bottom: 1px solid #4297ff;
   cursor: pointer;
   transition: $ease;
   &:last-child {border-bottom: none;}

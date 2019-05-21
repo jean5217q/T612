@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Type extends Component {
   render() {
@@ -10,6 +11,11 @@ class Type extends Component {
       </div>
     )
   }
+}
+
+Type.propTypes = {
+  typeLabel: PropTypes.string,
+  typeValue: PropTypes.string, 
 }
 
 export default Type

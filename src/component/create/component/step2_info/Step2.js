@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import DateSelector from './component/DateSelector'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import DateSelector from './component/DateSelector';
 import { country_text as text, btn } from '../../../../data/Content';
 
 class Step2 extends Component {
@@ -93,6 +94,20 @@ class Step2 extends Component {
       </div>
     )
   }
+}
+
+Step2.propTypes = {
+  lang: PropTypes.number,
+  startDate: PropTypes.object,
+  endDate: PropTypes.object,
+  project: PropTypes.string,
+  step2: PropTypes.bool,
+  creating: PropTypes.bool,
+  setProject: PropTypes.func,
+  setStartDate: PropTypes.func,
+  setEndDate: PropTypes.func,
+  backToStep1: PropTypes.func,
+  createProject: PropTypes.func
 }
 
 export default Step2

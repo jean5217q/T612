@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Map_Item extends Component {
   generateId = () => `map-${this.props.id}`
@@ -35,6 +36,12 @@ class Map_Item extends Component {
       </div>
     )
   }
+}
+
+Map_Item.propTypes = {
+  mapList: PropTypes.array, 
+  mapShowing: PropTypes.bool, 
+  id: PropTypes.string
 }
 
 export default Map_Item;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Type_Icon from './element/Type_Icon';
 import Time_Text from './element/Time_Text';
 import Drop_Icon from './element/Drop_Icon';
@@ -76,7 +77,10 @@ class Item_Top extends Component {
       >
         <div className="i-item-top-inner">
           <Time_Text time={formateTime(time)} />
-          <Type_Icon type={type}/>
+          <Type_Icon 
+            type={type}
+            sub_type={sub_type}
+            />
           {
             type === 'trans'
               ?
@@ -115,4 +119,19 @@ class Item_Top extends Component {
     )
   }
 }
+
+Item_Top.propTypes = {
+  lang: PropTypes.number,
+  toggleSubItem: PropTypes.func,
+  main: PropTypes.object,
+  type: PropTypes.string,
+  time: PropTypes.object,
+  sub_type: PropTypes.string,
+  sub: PropTypes.array,
+  map: PropTypes.array,
+  getEditData: PropTypes.func,
+  deleteItem: PropTypes.func,
+  id: PropTypes.string
+}
+
 export default Item_Top;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Planet extends Component {
   state = {
@@ -68,23 +69,15 @@ class Planet extends Component {
                                   white 95%)`
               }}>
           </div>
-          <div className="c check-site"></div>
+          <div className="circle-mask check-site"></div>
         </div>
       </div>
     )
   }
 }
 
-export default Planet
+Planet.propTypes = {
+  addSiteTag: PropTypes.func,
+}
 
-
-
-
-
-
-
-
-
-
-
-
+export default Planet;

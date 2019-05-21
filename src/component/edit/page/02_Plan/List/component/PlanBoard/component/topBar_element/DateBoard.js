@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DateSelector from './DateSelector';
 
 class DateBoard extends Component {
@@ -33,6 +34,15 @@ class DateBoard extends Component {
       </div>  
     )
   }
+}
+
+DateBoard.propTypes = {
+  date: PropTypes.object,
+  dateBoard: PropTypes.bool,
+  label: PropTypes.string,
+  submit: PropTypes.string,
+  setDate: PropTypes.func,
+  updateDate: PropTypes.func
 }
 
 export default DateBoard;

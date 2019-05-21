@@ -1,5 +1,5 @@
-//env
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -72,6 +72,14 @@ class Share_Nav extends Component {
       </nav>
     )
   }
+}
+
+Share_Nav.propTypes = {
+  color: PropTypes.string, 
+  lang: PropTypes.number, 
+  isNav: PropTypes.bool, 
+  closeNav: PropTypes.func,
+  dispatch: PropTypes.func
 }
 
 export default withRouter(connect()(Share_Nav))

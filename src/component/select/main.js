@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LinkItem from './component/LinkItem'
 import { getLangFromCookie } from '../../action/user';
@@ -33,4 +34,10 @@ const mapStateToProps = (state) => {
     lang: state.user.lang
   }
 }
+
+Select.propTypes = {
+  lang: PropTypes.number,
+  dispatch: PropTypes.func
+}
+
 export default connect(mapStateToProps)(Select)

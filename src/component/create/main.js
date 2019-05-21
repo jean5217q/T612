@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Step1 from './component/step1_country/Step1';
 import Step2 from './component/step2_info/Step2'
@@ -32,7 +33,7 @@ class Create_page extends Component {
   }
   removeFromCountryList = (country) => {
     this.setState(prevState => ({
-      countryList: prevState.selected_countryList.filter(el => el !== country)
+      selected_countryList: prevState.selected_countryList.filter(el => el !== country)
     }))
   }
   getNextDay = (dayIndex) => {
@@ -144,4 +145,12 @@ const mapStateToProps = (state) => {
     lang: state.user.lang
   }
 }
+
+Create_page.propTypes = {
+  lang: PropTypes.number,
+  dispatch: PropTypes.func,
+  history: PropTypes.object
+
+}
+
 export default connect(mapStateToProps)(Create_page)

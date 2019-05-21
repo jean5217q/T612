@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import List_Item from './listBoard_component/List_Item';
 import AddForm from './AddForm';
@@ -91,7 +92,7 @@ class ListBoard extends Component {
     e.preventDefault()
     const { projectId, dateId, hideAddBoard, dispatch } = this.props
     const { select_type, title, value, select_currency } = this.state
-    if (!select_type && title === '' && value === '') return
+    if (!select_type || title === '' || value === '') return
     dispatch(itemLoading(true))
     hideAddBoard()
     this.getExchangeRate(value, select_currency, (usd, twd, rmb) => {
@@ -180,11 +181,11 @@ class ListBoard extends Component {
       hideAddBoard
     } = this.props
     return (
-      <div className='list-bottom'>
+      <div className='board-bottom'>
       {
         this.hasListItem(list)
         ?
-        <div className='list-bottom'>
+        <div className='board-bottom'>
           <div className="i-item-wrap budget">
             {type.map((type, index) =>
               list[type].length > 0 &&
@@ -224,8 +225,7 @@ class ListBoard extends Component {
                 {text['total'][lang]}
               </div>
               <div className='budget-list-item-total-value'>
-                {user_currency}.
-                {formateAmount(this.calcTotalCost())}
+                {user_currency} {formateAmount(this.calcTotalCost())}
               </div>
             </div>
           </div>
@@ -275,6 +275,21 @@ class ListBoard extends Component {
       </div>
     )
   }
+}
+
+ListBoard.propTypes = {
+  lang: PropTypes.number,
+  projectId: PropTypes.string,
+  dateId: PropTypes.string,
+  currencyList: PropTypes.array,
+  list: PropTypes.object,
+  text: PropTypes.object,
+  user_currency: PropTypes.string,
+  loading: PropTypes.bool,
+  AddBoardShowing: PropTypes.bool,
+  formateAmount: PropTypes.func,
+  hideAddBoard: PropTypes.func,
+  dispatch: PropTypes.func
 }
 
 export default connect()(ListBoard)

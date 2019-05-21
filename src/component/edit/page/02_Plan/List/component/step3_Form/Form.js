@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Flight from './component/transportation/Flight';
 import Train from './component/transportation/Train';
 import Cruise from './component/transportation/Cruise';
@@ -24,9 +25,22 @@ class Form extends Component {
     return tt
   }
   render() {
-    const { mainType, subType, topBasic, backToStep1,
-      backToStep2, backToStep3,
-      setBasicInput, goToStep5, basic, dbTime, lang, nextTime, planList } = this.props
+    const { 
+      color,
+      mainType, 
+      subType, 
+      topBasic, 
+      backToStep1,
+      backToStep2, 
+      backToStep3,
+      setBasicInput, 
+      goToStep5, 
+      basic, 
+      dbTime, 
+      lang, 
+      nextTime, 
+      planList 
+    } = this.props
       
     let time = new Date(topBasic.time.seconds * 1000)
     if (planList.length > 0) {
@@ -45,11 +59,12 @@ class Form extends Component {
         <TopBar
           type={mainType}
           lang={lang}
+          color={color}
           backToStep1={backToStep1}
           backToStep2={backToStep2}
           backToStep3={backToStep3}
         />
-        <div className='add-act-bottom-wrap-select'>
+        <div className='add-plan-bottom-select'>
           {mainType === 'trans' && subType === 'flight' ?
             <Flight
               type={subType}
@@ -162,6 +177,24 @@ class Form extends Component {
       </div>
     )
   }
+}
+
+Form.propTypes = {
+  color: PropTypes.string,
+  name: PropTypes.string,
+  mainType: PropTypes.string, 
+  subType: PropTypes.string, 
+  topBasic: PropTypes.object, 
+  backToStep1: PropTypes.func,
+  backToStep2: PropTypes.func, 
+  backToStep3: PropTypes.func,
+  setBasicInput: PropTypes.func, 
+  goToStep5: PropTypes.func, 
+  basic: PropTypes.object, 
+  dbTime: PropTypes.number, 
+  lang: PropTypes.number, 
+  nextTime: PropTypes.object, 
+  planList: PropTypes.array
 }
 
 export default Form

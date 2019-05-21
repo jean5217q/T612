@@ -1,59 +1,43 @@
-.add-act-icon.sub {
+.add-plan-icon>.icon.sub {
   cursor: pointer;
   //景點
   &.attraction {
     background-color: $act-attraction;
-    &:after {
-      background-image: url('../images/sub_cata/activity/cata_activity_attraction.svg');
-    }   
+    &:after {  background-image: url('../images/sub_cata/activity/cata_activity_attraction.svg'); }   
   }
   //購物
   &.shopping {
     background-color: $act-shopping;
-    &:after {
-      background-image: url('../images/sub_cata/activity/cata_activity_shopping.svg');
-    }   
+    &:after {background-image: url('../images/sub_cata/activity/cata_activity_shopping.svg');}   
   }
   //活動
   &.events {
     background-color: $act-events;
-    &:after {
-      background-image: url('../images/sub_cata/activity/cata_activity_event.svg');
-    }  
+    &:after {background-image: url('../images/sub_cata/activity/cata_activity_event.svg'); }  
   }
   //其他
   &.activity_others {
     background-color: $act-others;
-    &:after {
-      background-image: url('../images/sub_cata/activity/cata_activity_others.svg');
-    }  
+    &:after { background-image: url('../images/sub_cata/activity/cata_activity_others.svg');}  
   }
 }
 
 @media screen and(min-width: 768px) {
   .add-act-icon.sub {
     &.attraction {
-      &:hover {
-        background-color: $light-act-attraction
-      }    
+      &:hover { background-color: $light-act-attraction }    
     }
     //購物
     &.shopping {
-      &:hover {
-        background-color: $light-act-shopping;
-      }    
+      &:hover {background-color: $light-act-shopping;}    
     }
     //活動
     &.events {
-      &:hover {
-        background-color: $light-act-events;
-      }    
+      &:hover {background-color: $light-act-events;}    
     }
     //其他
     &.activity_others {
-      &:hover {
-        background-color: $light-act-events;
-      }    
+      &:hover {background-color: $light-act-events;}    
     }
   }
 }

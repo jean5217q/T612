@@ -8,8 +8,8 @@
 
 //左側導覽列WRAP
 .left-nav-wrap {
-  @include size(200px,100%);
-  @include fixed($t: 0,$l: 0,$z: 102);
+  @include size(180px,100%);
+  @include fixed($t: 0,$l: 0,$z: 1001);
   margin-right: 24px;
   @include flexy($dir: column,$ais: center);
   font-weight: 300;
@@ -21,7 +21,7 @@
 }
 @media screen and(max-width: 959px) {
   .left-nav-wrap {
-    left: -200px;
+    left: -180px;
     transition: $ease;
     &.show {left: 0;}
   }

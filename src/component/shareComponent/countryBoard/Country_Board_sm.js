@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { btn } from '../../../data/Content';
 
 class Country_Board_sm extends Component {
   render() {
     const {
+      lang,
       stateList,
       areaList,
       countryList,
@@ -19,8 +21,7 @@ class Country_Board_sm extends Component {
       stateTitle,
       areaTitle,
       countryTitle,
-      addToCountryList,
-      lang
+      addToCountryList,  
     } = this.props
     return (
       <div className='select-country-panel sm'>
@@ -94,6 +95,26 @@ class Country_Board_sm extends Component {
       </div>
     )
   }
+}
+
+Country_Board_sm.propTypes = {
+  lang: PropTypes.number,
+  stateList: PropTypes.array,
+  areaList: PropTypes.array,
+  countryList: PropTypes.array,
+  selected_state: PropTypes.string,
+  selected_area: PropTypes.string,
+  selected_country: PropTypes.string,
+  getSelectedState: PropTypes.func,
+  getSelectedArea: PropTypes.func,
+  setCountry: PropTypes.func,
+  formateCountry: PropTypes.object,
+  formateArea: PropTypes.object,
+  formateState: PropTypes.object,
+  stateTitle: PropTypes.string,
+  areaTitle: PropTypes.string,
+  countryTitle: PropTypes.string,
+  addToCountryList: PropTypes.func
 }
 
 export default Country_Board_sm

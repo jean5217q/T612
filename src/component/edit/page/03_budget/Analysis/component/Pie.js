@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as d3 from "d3";
 
-
-class Analysis_left extends Component {
+class Pie extends Component {
   state = {
     w: 240,
     h: 240,
@@ -87,6 +87,9 @@ class Analysis_left extends Component {
   }
 }
 
+Pie.propTypes = {
+  costList: PropTypes.array,
+  total: PropTypes.number,
+}
 
-
-export default Analysis_left;
+export default Pie;

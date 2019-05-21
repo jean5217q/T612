@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 class LocationBoard extends Component {
   render() {
@@ -33,6 +34,16 @@ class LocationBoard extends Component {
     </div>
     )
   }
+}
+
+LocationBoard.propTypes = {
+  location: PropTypes.string,
+  locationBoard: PropTypes.bool,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  submit: PropTypes.string,
+  setLocation: PropTypes.func,
+  updateLocation: PropTypes.func
 }
 
 export default LocationBoard;

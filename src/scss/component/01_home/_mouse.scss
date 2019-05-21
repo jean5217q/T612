@@ -1,0 +1,16 @@
+.mouse {
+  @include size(12px,12px);
+  border-radius: 50%;
+  @include absolute($t: -100px , $l: -100px, $z: 100);
+  background-color: yellow;
+  &.site{
+    background-image: url('../images/essential/site.svg');
+    @include size(50px,50px);
+    background-size: 100%,100%;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 768px ) {
+  .mouse {display: none;}
+}

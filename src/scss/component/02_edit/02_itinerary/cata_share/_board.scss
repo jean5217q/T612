@@ -1,33 +1,21 @@
-
-.edit-cata-wrap {
+.main-cata {
   position: relative;
   width: 100%;
-  @include flexy($dir: column);
   background-color: $white;
+  @include flexy($dir: column,$ais: center);
 }
-
-//lg-面板
-@media screen and(min-width: 768px) {
-  .edit-cata-wrap {
-    max-width: 700px;
-    margin-top: 100px;
+@media screen and(max-width: 959px) {
+  .main-cata { height: calc(100vh - 42px); }
+}
+@media screen and(min-width: 960px) {
+  .main-cata {
+    max-width: 900px;
+    margin: 8vh 3vw;
     border: 1px solid $border;
-    border-radius: 24px;
-    box-shadow: 0px 15px 20px $shadow;
+    border-radius: 20px;
     overflow: hidden;
   }
 }
-@media screen and(min-width: 1100px) {
-  .edit-cata-wrap {
-    max-width: 800px;
-  }
-}
-@media screen and(min-width: 1200px) {
-  .edit-cata-wrap {
-    max-width: 900px;
-  }
-}
-
 
 
 

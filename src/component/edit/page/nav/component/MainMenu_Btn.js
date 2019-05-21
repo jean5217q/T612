@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 class MainMenu_Btn extends Component {
@@ -45,6 +46,11 @@ class MainMenu_Btn extends Component {
       </div>
     )
   }
+}
+
+MainMenu_Btn.propTypes = {
+  lang: PropTypes.number,
+  nav: PropTypes.object,
 }
 
 export default MainMenu_Btn;

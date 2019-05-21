@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LinkItem from './component/LinkItem';
 import Add_Btn from './component/Add_Btn';
@@ -61,17 +62,17 @@ class Project extends Component {
     const { delete_pop, title } = this.state
     const filterList = this.sortListbyStatus(list)
     return (
-      <div className='edit-main-wrap'>
-        <div className='edit-list-wrap'>
-          <div className={`list-top project color-${color}`}>
-            <div className='list-top-inner'>
+      <div className='main-wrap'>
+        <div className='board'>
+          <div className={`board-top project color-${color}`}>
+            <div className='board-top-inner'>
               <div className={`top-title lang-${lang}`}>
                 {topBar[status][lang]}
               </div>
             </div>
           </div>
           {filterList.length > 0 ?
-            <div className='list-bottom project'>
+            <div className='board-bottom project'>
               <div className='profile-project-block'>
                 {filterList.map((el, index) =>
                   <LinkItem
@@ -99,4 +100,15 @@ class Project extends Component {
     )
   }
 }
+
+Project.propTypes = {
+  lang: PropTypes.number,
+  uid: PropTypes.string,
+  dispatch: PropTypes.func,
+  list: PropTypes.array,
+  status: PropTypes.string,
+  color: PropTypes.string,
+  topBar: PropTypes.object
+}
+
 export default connect()(Project)

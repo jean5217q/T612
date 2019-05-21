@@ -1,5 +1,3 @@
-export const db = firebase.firestore()
-
 export const getQueryId = () => {
   let query = window.location.href
   query = query.split('?')[1].split('&')
@@ -63,3 +61,5 @@ export const formateStartDate = (date) => {
   formate.setSeconds(0)
   return formate
 }
+
+export const db = firebase.firestore();

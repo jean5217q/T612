@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Form_Item extends Component {
   render() {
@@ -32,6 +33,16 @@ class Form_Item extends Component {
   }
 }
 
-
+Form_Item.propTypes = {
+  lang: PropTypes.number,
+  type: PropTypes.string,
+  percent: PropTypes.number,
+  total: PropTypes.number, 
+  user_currency: PropTypes.string,
+  text: PropTypes.object, 
+  costList: PropTypes.array,
+  formateAmount: PropTypes.func,
+  getCurrencyType: PropTypes.func 
+}
 
 export default Form_Item;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { formateTime } from '../../../../../../../../../../../base';
 
 class Main_Trans extends Component {
@@ -17,20 +18,12 @@ class Main_Trans extends Component {
   }
   render() {
     const { main, sub_type } = this.props;
-    console.log(main)
     const depart = main.depart
     const arrive = main.arrive
-    console.log(depart,arrive)
     const arriveTime = arrive.time.seconds
     const departTime = depart.time.seconds
     return (
       <div className="i-top-block main">
-        <div className="i-top-main-block line">
-          <div className="trans-line-line"></div>
-          <div className="trans-line-icon">
-            <div className={`trans-line-icon-inner ${sub_type}`}></div>
-          </div>
-        </div>
         <div className="i-top-main-block info">
           <div className="i-top-main-place">
             <div className="i-top-main-title">
@@ -40,6 +33,7 @@ class Main_Trans extends Component {
               {formateTime(departTime)}
             </div>
           </div>
+          <div className='to-icon'></div>
           <div className="i-top-main-place">
             <div className="i-top-main-title">
               {arrive.location}
@@ -53,6 +47,11 @@ class Main_Trans extends Component {
       </div>
     )
   }
+}
+
+Main_Trans.propTypes = {
+  main: PropTypes.object,
+  sub_type: PropTypes.string
 }
 
 export default Main_Trans

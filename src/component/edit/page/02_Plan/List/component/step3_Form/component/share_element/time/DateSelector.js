@@ -80,6 +80,8 @@ class MaterialUIPickers extends React.Component {
 
 MaterialUIPickers.propTypes = {
   classes: PropTypes.object.isRequired,
+  time: PropTypes.object,
+  setTime: PropTypes.func
 };
 
 export default withStyles(styles)(MaterialUIPickers);
