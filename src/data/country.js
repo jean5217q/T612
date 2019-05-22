@@ -107,9 +107,10 @@ export const Country = {
   Bulgaria: ['Bulgaria', '保加利亞'],
   Czech: ['Czech', '捷克'],
   Hungary: ['Hungary', '匈牙利'],
+  Moldova: ['Moldova','摩爾多瓦'],
   Poland: ['Poland', '波蘭'],
   Romania: ['Romania', '羅馬尼亞'],
-  Russian: ['Russian', '俄羅斯'],
+  Russia: ['Russia', '俄羅斯'],
   Slovakia: ['Slovakia', '斯洛伐克'],
   Ukraine: ['Ukraine', '烏克蘭'],
   //
@@ -299,15 +300,16 @@ export const Europe = {
   Eastern_Europe: [
     'Belarus',
     'Bulgaria',
-    // 'Czech',
+    'Czech',
     'Hungary',
-    // 'Poland',
-    // 'Moldova',
-    // 'Romania',
-    // 'Russian',
-    // 'Slovakia',
-    // 'Ukraine'
+    'Poland',
+    'Moldova',
+    'Romania',
+    'Russia',
+    'Slovakia',
+    'Ukraine'
   ],
+  
   Western_Europe: [
     'Belgium',
     'France',
@@ -319,15 +321,15 @@ export const Europe = {
     // 'Switzerland'
   ],
   Northern_Europe: [
-    // 'Denmark',
-    // 'Estonia',
-    // 'Finland',
-    // 'Iceland',
+    'Denmark',
+    'Estonia',
+    'Finland',
+    'Iceland',
     'Ireland',
-    // 'Latvia',
-    // 'Lithuania',
-    // 'Norway',
-    // 'Sweden',
+    'Latvia',
+    'Lithuania',
+    'Norway',
+    'Sweden',
     'England'
   ],
   Southern_Europe: [
@@ -343,7 +345,7 @@ export const Europe = {
     // 'Portugal',
     // 'San_Marino',
     // 'Serbia',
-    // 'Slovenia',
+    'Slovenia',
     'Spain',
     // 'Macedonia'
   ],

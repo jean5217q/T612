@@ -1,24 +1,15 @@
 const db = firebase.firestore();
-db.collection('nation').add({
-  id: 'Palau',
-  language: ['WelMelekeoklington','梅萊凱奧克'],
-  country: ['Palau','帛琉'],
-  currency: ['USD','美元'],
-  rate: 'USD',
-  currency_icon: '$',
-  voltage: '110V'
-}).then(doc=>console.log(doc))
 
 
 db.collection('nation').add({
-  id: 'Libya',
-  capital: ['Tripoli','的黎波里'],
-  language: ['Arabic','阿拉伯語'],
-  country: ['Libya','利比亞'],
-  currency: ['LYD','利比亞第納爾'],
-  rate: 'LYD',
-  currency_icon: 'ل.د',
-  voltage: '220V / 230V'
+  id: 'Iceland',
+  capital: ['Reykjavík','雷克亞維克'],
+  language: ['Icelandic','冰島語'],
+  country: ['Iceland','冰島'],
+  currency: ['ISK','	冰島克朗'],
+  rate: 'ISK',
+  currency_icon: 'kr',
+  voltage: '220V'
 }).then(doc=>console.log(doc))
 
 db.collection('nation').add({
