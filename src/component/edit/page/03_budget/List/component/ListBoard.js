@@ -92,7 +92,7 @@ class ListBoard extends Component {
     e.preventDefault()
     const { projectId, dateId, hideAddBoard, dispatch } = this.props
     const { select_type, title, value, select_currency } = this.state
-    if (!select_type || title === '' || value === '') return
+    if (!select_type || title === '' || value <= 0) return
     dispatch(itemLoading(true))
     hideAddBoard()
     this.getExchangeRate(value, select_currency, (usd, twd, rmb) => {

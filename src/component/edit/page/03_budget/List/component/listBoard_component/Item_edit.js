@@ -38,7 +38,7 @@ class Item_Edit extends Component {
     e.preventDefault()
     const { index, updateItem, closeEditBoard, type } = this.props
     const { value, title, select_currency } = this.state
-    if (value === '' || title === '') return
+    if (value <=0 || title === '') return
     const obj = {
       title: title,
       value: parseInt(value),
